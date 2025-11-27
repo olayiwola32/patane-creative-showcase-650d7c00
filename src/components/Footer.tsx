@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -7,7 +8,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-primary">Patane Creative</h3>
+            <img src={logo} alt="Patane Creative Logo" className="h-12 w-auto" />
             <p className="text-sm text-muted-foreground">
               Your trusted e-commerce partner for Shopify, Wix, and digital marketing solutions.
             </p>
