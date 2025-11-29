@@ -1,4 +1,5 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
+import { z } from "https://esm.sh/zod@3.23.8";
 
 const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
 
@@ -8,13 +9,26 @@ const corsHeaders = {
     "authorization, x-client-info, apikey, content-type",
 };
 
-interface ContactEmailRequest {
-  name: string;
-  email: string;
-  business?: string;
-  service?: string;
-  message: string;
-}
+// Validation schema
+const contactSchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
+  email: z.string().trim().email("Invalid email address").max(255, "Email must be less than 255 characters"),
+  business: z.string().trim().max(100, "Business name must be less than 100 characters").optional(),
+  service: z.string().trim().max(100, "Service must be less than 100 characters").optional(),
+  message: z.string().trim().min(1, "Message is required").max(2000, "Message must be less than 2000 characters"),
+});
+
+// HTML escape function to prevent injection
+const escapeHtml = (text: string): string => {
+  const map: Record<string, string> = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;',
+  };
+  return text.replace(/[&<>"']/g, (char) => map[char]);
+};
 
 const handler = async (req: Request): Promise<Response> => {
   // Handle CORS preflight requests
@@ -23,7 +37,26 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const { name, email, business, service, message }: ContactEmailRequest = await req.json();
+    const body = await req.json();
+    
+    // Validate input
+    const validationResult = contactSchema.safeParse(body);
+    
+    if (!validationResult.success) {
+      console.error("Validation error:", validationResult.error);
+      return new Response(
+        JSON.stringify({ 
+          error: "Invalid input", 
+          details: validationResult.error.flatten().fieldErrors 
+        }),
+        {
+          status: 400,
+          headers: { "Content-Type": "application/json", ...corsHeaders },
+        }
+      );
+    }
+
+    const { name, email, business, service, message } = validationResult.data;
 
     console.log("Sending contact email from:", email);
 
@@ -41,14 +74,14 @@ const handler = async (req: Request): Promise<Response> => {
         subject: `New Contact Form Submission from ${name}`,
         html: `
           <h2>New Contact Form Submission</h2>
-          <p><strong>Name:</strong> ${name}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          ${business ? `<p><strong>Business:</strong> ${business}</p>` : ''}
-          ${service ? `<p><strong>Service Interest:</strong> ${service}</p>` : ''}
+          <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+          <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+          ${business ? `<p><strong>Business:</strong> ${escapeHtml(business)}</p>` : ''}
+          ${service ? `<p><strong>Service Interest:</strong> ${escapeHtml(service)}</p>` : ''}
           <p><strong>Message:</strong></p>
-          <p>${message.replace(/\n/g, '<br>')}</p>
+          <p>${escapeHtml(message).replace(/\n/g, '<br>')}</p>
           <hr>
-          <p style="color: #666; font-size: 12px;">You can reply directly to this email to respond to ${name}.</p>
+          <p style="color: #666; font-size: 12px;">You can reply directly to this email to respond to ${escapeHtml(name)}.</p>
         `,
       }),
     });
