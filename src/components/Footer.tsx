@@ -50,11 +50,18 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Mail size={16} className="text-accent" />
-                contact@patanecreative.com
+                <div>
+                  <div>team.patanecreative@gmail.com</div>
+                  <div>info@patanecreative.site</div>
+                </div>
               </li>
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Phone size={16} className="text-accent" />
-                Available for consultation
+                +1 (210) 628-6741
+              </li>
+              <li className="flex items-center gap-2 text-sm text-muted-foreground">
+                <Phone size={16} className="text-accent" />
+                WhatsApp: +1 (210) 669-4514
               </li>
             </ul>
           </div>
