@@ -203,7 +203,8 @@ const Contact = () => {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground">contact@patanecreative.com</p>
+                    <p className="text-muted-foreground">team.patanecreative@gmail.com</p>
+                    <p className="text-muted-foreground">info@patanecreative.site</p>
                     <p className="text-sm text-muted-foreground mt-2">
                       For general inquiries and project discussions
                     </p>
@@ -218,9 +219,24 @@ const Contact = () => {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground">Available upon request</p>
+                    <p className="text-muted-foreground">+1 (210) 628-6741</p>
                     <p className="text-sm text-muted-foreground mt-2">
                       Schedule a call to discuss your project in detail
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-border">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-3 text-foreground">
+                      <Phone className="w-6 h-6 text-accent" />
+                      WhatsApp
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">+1 (210) 669-4514</p>
+                    <p className="text-sm text-muted-foreground mt-2">
+                      Message us on WhatsApp for quick responses
                     </p>
                   </CardContent>
                 </Card>
