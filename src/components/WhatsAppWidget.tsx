@@ -1,7 +1,7 @@
 import { MessageCircle } from "lucide-react";
 
 const WhatsAppWidget = () => {
-  const phoneNumber = "12106694514"; // WhatsApp format: country code + number without special characters
+  const phoneNumber = "15136551912"; // WhatsApp format: country code + number without special characters
   const whatsappUrl = `https://wa.me/${phoneNumber}`;
 
   return (
