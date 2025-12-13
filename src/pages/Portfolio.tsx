@@ -1,80 +1,106 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ArrowRight, TrendingUp, Clock, Target } from "lucide-react";
+import { ArrowRight, TrendingUp, Clock, Target, Shield, Mail, Store } from "lucide-react";
 import { Link } from "react-router-dom";
-import caseStudy1Before from "@/assets/case-study-1-before.jpg";
-import caseStudy1After from "@/assets/case-study-1-after.jpg";
-import caseStudy2Before from "@/assets/case-study-2-before.jpg";
-import caseStudy2After from "@/assets/case-study-2-after.jpg";
-import caseStudy3Before from "@/assets/case-study-3-before.jpg";
-import caseStudy3After from "@/assets/case-study-3-after.jpg";
+
+// Portfolio images
+import sslRedirectFix from "@/assets/portfolio/ssl-redirect-fix.png";
+import sslCertificateSetup from "@/assets/portfolio/ssl-certificate-setup.png";
+import autumnBlissSales from "@/assets/portfolio/autumn-bliss-sales.png";
+import crossTossTraffic from "@/assets/portfolio/cross-toss-traffic.png";
+import crossTossDashboard from "@/assets/portfolio/cross-toss-dashboard.png";
+import klaviyoRevenue from "@/assets/portfolio/klaviyo-revenue.png";
+import klaviyoFlows from "@/assets/portfolio/klaviyo-flows.png";
+import klaviyoCampaigns from "@/assets/portfolio/klaviyo-campaigns.png";
+import haustierbedarfRebrand from "@/assets/portfolio/haustierbedarf-rebrand.png";
+import autumnBlissRedesign from "@/assets/portfolio/autumn-bliss-redesign.png";
 
 const Portfolio = () => {
   const caseStudies = [
     {
       id: 1,
-      title: "Luxury Skincare Brand Transformation",
-      category: "Store Rebrand & SEO",
+      title: "Cross Toss Trading - Complete Store Management",
+      category: "Store Management & Growth",
       platform: "Shopify",
-      client: "Premium Beauty Co.",
-      duration: "6 weeks",
-      beforeImage: caseStudy1Before,
-      afterImage: caseStudy1After,
-      challenge: "The client's Shopify store had outdated branding, poor mobile experience, and wasn't ranking for key search terms. Cart abandonment was at 78%.",
-      solution: "Complete store rebrand with modern design system, mobile-first approach, advanced SEO optimization with schema markup, and strategic product categorization.",
+      client: "Cross Toss Trading",
+      duration: "Ongoing",
+      icon: Store,
+      images: [crossTossDashboard, crossTossTraffic],
+      challenge: "The client needed comprehensive store management to scale their e-commerce operations, increase traffic, and boost overall sales performance.",
+      solution: "Implemented full store management including product optimization, traffic strategies, conversion optimization, and ongoing analytics monitoring to maximize revenue.",
       results: [
-        { metric: "Conversion Rate", value: "+187%", description: "From 1.2% to 3.4%" },
-        { metric: "Organic Traffic", value: "+245%", description: "Monthly visitors increased" },
-        { metric: "Cart Abandonment", value: "-43%", description: "Reduced to 35%" },
-        { metric: "Page Load Speed", value: "+165%", description: "From 4.2s to 1.6s" },
+        { metric: "Sessions", value: "5,260", description: "+177% increase" },
+        { metric: "Total Sales", value: "$9,860", description: "+55% growth" },
+        { metric: "Orders", value: "100+", description: "+56% increase" },
+        { metric: "Conversion Rate", value: "1.81%", description: "+80% improvement" },
       ],
-      services: ["Store Rebrand", "Advanced SEO", "Mobile Optimization", "Speed Optimization"],
-      testimonial: "Patane Creative completely transformed our online presence. Sales tripled in just two months!",
-      testimonialAuthor: "Sarah Mitchell, Founder"
+      services: ["Store Management", "Traffic Optimization", "Sales Strategy", "Analytics"],
+      testimonial: "Patane Creative transformed our store performance. The results speak for themselves - our sales nearly doubled!",
+      testimonialAuthor: "Cross Toss Trading Team"
     },
     {
       id: 2,
-      title: "Home Decor Store SEO Overhaul",
-      category: "SEO & Technical Fixes",
-      platform: "Wix",
-      client: "Modern Living Spaces",
-      duration: "8 weeks",
-      beforeImage: caseStudy2Before,
-      afterImage: caseStudy2After,
-      challenge: "The Wix store had minimal search visibility, technical issues causing slow load times, and poor product discoverability. Monthly revenue was stagnant.",
-      solution: "Comprehensive SEO strategy with keyword research, technical backend optimization, improved site architecture, and enhanced product descriptions with rich snippets.",
+      title: "Autumn Bliss Market - Email Marketing & Sales Growth",
+      category: "Email Marketing & Klaviyo",
+      platform: "Shopify + Klaviyo",
+      client: "Autumn Bliss Market",
+      duration: "Ongoing",
+      icon: Mail,
+      images: [klaviyoRevenue, klaviyoFlows, klaviyoCampaigns, autumnBlissSales, autumnBlissRedesign],
+      challenge: "The boutique needed a complete email marketing strategy to increase customer retention, recover abandoned carts, and drive consistent revenue from email campaigns.",
+      solution: "Implemented comprehensive Klaviyo email flows including abandoned cart recovery, browse abandonment, customer winback, welcome series with discounts, and strategic email campaigns.",
       results: [
-        { metric: "Search Rankings", value: "Top 3", description: "For 24 target keywords" },
-        { metric: "Monthly Revenue", value: "+320%", description: "Year-over-year growth" },
-        { metric: "Site Speed", value: "+180%", description: "Improved performance score" },
-        { metric: "Product Views", value: "+275%", description: "Average per product" },
+        { metric: "Email Revenue", value: "$1,702", description: "+92% vs previous period" },
+        { metric: "Flow Revenue", value: "$61.61", description: "100% from automated flows" },
+        { metric: "Sessions", value: "198", description: "+113% traffic increase" },
+        { metric: "Sales", value: "$195.66", description: "+70% weekly growth" },
       ],
-      services: ["Advanced SEO", "Technical Fixes", "Site Architecture", "Content Optimization"],
-      testimonial: "The SEO results exceeded all expectations. We're now ranking above competitors who've been in business for decades.",
-      testimonialAuthor: "Michael Chen, Owner"
+      services: ["Klaviyo Email Flows", "Email Campaigns", "Abandoned Cart Recovery", "Welcome Series", "Store Redesign"],
+      testimonial: "The email automation is incredible. We're recovering sales we would have lost and customers love the personalized experience.",
+      testimonialAuthor: "Autumn Bliss Market Owner"
     },
     {
       id: 3,
-      title: "Fashion Boutique Email Automation",
-      category: "Email Marketing & Klaviyo",
+      title: "Haustierbedarf4You - German Pet Store Rebrand",
+      category: "Store Rebrand & Design",
       platform: "Shopify",
-      client: "Chic Styles Boutique",
-      duration: "5 weeks",
-      beforeImage: caseStudy3Before,
-      afterImage: caseStudy3After,
-      challenge: "The boutique had no email marketing automation, relied solely on paid ads, and struggled with customer retention. LTV was extremely low.",
-      solution: "Implemented advanced Klaviyo email flows including welcome series, abandoned cart recovery, post-purchase sequences, and VIP customer campaigns with personalization.",
+      client: "Haustierbedarf4You (Oliver Ormans)",
+      duration: "4 weeks",
+      icon: Store,
+      images: [haustierbedarfRebrand],
+      challenge: "The German pet supply store needed a complete visual rebrand to better connect with pet owners and create a premium, trustworthy shopping experience.",
+      solution: "Complete store redesign with modern branding, engaging hero section featuring adorable pet imagery, multilingual support with German localization, and optimized user experience.",
       results: [
-        { metric: "Email Revenue", value: "+425%", description: "From email campaigns" },
-        { metric: "Customer LTV", value: "+156%", description: "Average lifetime value" },
-        { metric: "Repeat Purchases", value: "+89%", description: "Return customer rate" },
-        { metric: "Cart Recovery", value: "32%", description: "Abandoned carts recovered" },
+        { metric: "Brand Identity", value: "100%", description: "Complete rebrand" },
+        { metric: "User Experience", value: "Enhanced", description: "Modern design" },
+        { metric: "Mobile Ready", value: "Yes", description: "Fully responsive" },
+        { metric: "Localization", value: "German", description: "Native language support" },
       ],
-      services: ["Klaviyo Email Flows", "Email Marketing", "Customer Segmentation", "Automation"],
-      testimonial: "The email automation pays for itself 10x over every month. Game-changing for our retention strategy.",
-      testimonialAuthor: "Jessica Rivera, Marketing Director"
+      services: ["Store Rebrand", "Visual Design", "UX Optimization", "Localization"],
+      testimonial: "Die Besten Produkte für Pelzige Freunde - Our new store perfectly captures our brand mission!",
+      testimonialAuthor: "Oliver Ormans, Owner"
+    },
+    {
+      id: 4,
+      title: "XIT Offroad - SSL Certificate Fix & Security",
+      category: "Technical Fixes & Security",
+      platform: "E-commerce",
+      client: "XIT Offroad",
+      duration: "1 week",
+      icon: Shield,
+      images: [sslCertificateSetup, sslRedirectFix],
+      challenge: "The client's e-commerce store was showing SSL certificate errors, causing browser warnings that scared away customers and hurt SEO rankings.",
+      solution: "Complete SSL certificate setup and verification including certificate parsing, chain of trust building, domain validation, cipher suite negotiation, and proper redirect configuration.",
+      results: [
+        { metric: "SSL Status", value: "Verified", description: "Fully secured" },
+        { metric: "Certificate", value: "SHA-256", description: "Industry standard" },
+        { metric: "Browser Trust", value: "100%", description: "No warnings" },
+        { metric: "SEO Impact", value: "Restored", description: "HTTPS ranking boost" },
+      ],
+      services: ["SSL Certificate Setup", "Security Configuration", "Domain Verification", "Technical Fixes"],
+      testimonial: "Our customers can now shop with confidence. No more security warnings - just smooth, secure checkout.",
+      testimonialAuthor: "XIT Offroad Team"
     }
   ];
 
@@ -100,7 +126,7 @@ const Portfolio = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="space-y-24">
-            {caseStudies.map((study, index) => (
+            {caseStudies.map((study) => (
               <Card key={study.id} className="overflow-hidden">
                 <CardHeader>
                   <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
@@ -117,29 +143,22 @@ const Portfolio = () => {
                 </CardHeader>
 
                 <CardContent className="space-y-8">
-                  {/* Before/After Images */}
+                  {/* Project Images Gallery */}
                   <div>
-                    <h3 className="text-xl font-semibold mb-4">Visual Transformation</h3>
-                    <Tabs defaultValue="before" className="w-full">
-                      <TabsList className="grid w-full max-w-md grid-cols-2">
-                        <TabsTrigger value="before">Before</TabsTrigger>
-                        <TabsTrigger value="after">After</TabsTrigger>
-                      </TabsList>
-                      <TabsContent value="before" className="mt-4">
+                    <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                      <study.icon className="h-5 w-5 text-primary" />
+                      Project Showcase
+                    </h3>
+                    <div className={`grid gap-4 ${study.images.length === 1 ? 'grid-cols-1' : study.images.length === 2 ? 'grid-cols-1 md:grid-cols-2' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'}`}>
+                      {study.images.map((image, idx) => (
                         <img 
-                          src={study.beforeImage} 
-                          alt={`${study.title} - Before`}
-                          className="w-full rounded-lg border shadow-lg"
+                          key={idx}
+                          src={image} 
+                          alt={`${study.title} - Image ${idx + 1}`}
+                          className="w-full rounded-lg border shadow-lg hover:shadow-xl transition-shadow"
                         />
-                      </TabsContent>
-                      <TabsContent value="after" className="mt-4">
-                        <img 
-                          src={study.afterImage} 
-                          alt={`${study.title} - After`}
-                          className="w-full rounded-lg border shadow-lg"
-                        />
-                      </TabsContent>
-                    </Tabs>
+                      ))}
+                    </div>
                   </div>
 
                   {/* Challenge & Solution */}
