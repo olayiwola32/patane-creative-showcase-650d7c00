@@ -15,6 +15,12 @@ import klaviyoFlows from "@/assets/portfolio/klaviyo-flows.png";
 import klaviyoCampaigns from "@/assets/portfolio/klaviyo-campaigns.png";
 import haustierbedarfRebrand from "@/assets/portfolio/haustierbedarf-rebrand.png";
 import autumnBlissRedesign from "@/assets/portfolio/autumn-bliss-redesign.png";
+import autumnBliss3MonthDashboard from "@/assets/portfolio/autumn-bliss-3month-dashboard.png";
+import storeAuditResults from "@/assets/portfolio/store-audit-results.png";
+import googleTagManagerSetup from "@/assets/portfolio/google-tag-manager-setup.png";
+import somaGoogleAds from "@/assets/portfolio/soma-google-ads.png";
+import tropixMarketingDashboard from "@/assets/portfolio/tropix-marketing-dashboard.png";
+import seoOptimizationDashboard from "@/assets/portfolio/seo-optimization-dashboard.png";
 
 const Portfolio = () => {
   const caseStudies = [
@@ -47,16 +53,16 @@ const Portfolio = () => {
       client: "Autumn Bliss Market",
       duration: "Ongoing",
       icon: Mail,
-      images: [klaviyoRevenue, klaviyoFlows, klaviyoCampaigns, autumnBlissSales, autumnBlissRedesign],
+      images: [autumnBliss3MonthDashboard, klaviyoRevenue, klaviyoFlows, klaviyoCampaigns, autumnBlissSales, autumnBlissRedesign, storeAuditResults, googleTagManagerSetup],
       challenge: "The boutique needed a complete email marketing strategy to increase customer retention, recover abandoned carts, and drive consistent revenue from email campaigns.",
-      solution: "Implemented comprehensive Klaviyo email flows including abandoned cart recovery, browse abandonment, customer winback, welcome series with discounts, and strategic email campaigns.",
+      solution: "Implemented comprehensive Klaviyo email flows including abandoned cart recovery, browse abandonment, customer winback, welcome series with discounts, strategic email campaigns, Google Tag Manager setup, and full store audit optimization.",
       results: [
-        { metric: "Email Revenue", value: "$1,702", description: "+92% vs previous period" },
-        { metric: "Flow Revenue", value: "$61.61", description: "100% from automated flows" },
-        { metric: "Sessions", value: "198", description: "+113% traffic increase" },
-        { metric: "Sales", value: "$195.66", description: "+70% weekly growth" },
+        { metric: "Sessions", value: "1,809", description: "+276% increase" },
+        { metric: "Total Sales", value: "$1,835", description: "+129% growth" },
+        { metric: "Orders", value: "34", description: "+55% increase" },
+        { metric: "Store Audit", value: "100/100", description: "SSL, Mobile, Content" },
       ],
-      services: ["Klaviyo Email Flows", "Email Campaigns", "Abandoned Cart Recovery", "Welcome Series", "Store Redesign"],
+      services: ["Klaviyo Email Flows", "Email Campaigns", "Google Tag Manager", "Store Audit", "Store Redesign"],
       testimonial: "The email automation is incredible. We're recovering sales we would have lost and customers love the personalized experience.",
       testimonialAuthor: "Autumn Bliss Market Owner"
     },
@@ -101,6 +107,69 @@ const Portfolio = () => {
       services: ["SSL Certificate Setup", "Security Configuration", "Domain Verification", "Technical Fixes"],
       testimonial: "Our customers can now shop with confidence. No more security warnings - just smooth, secure checkout.",
       testimonialAuthor: "XIT Offroad Team"
+    },
+    {
+      id: 5,
+      title: "Soma Dental - Google Ads Campaign Management",
+      category: "Paid Advertising",
+      platform: "Google Ads",
+      client: "Soma Dental",
+      duration: "Ongoing",
+      icon: TrendingUp,
+      images: [somaGoogleAds],
+      challenge: "The dental practice needed to increase patient bookings through targeted paid advertising while maintaining efficient cost per acquisition.",
+      solution: "Implemented strategic Google Ads campaigns with optimized targeting, compelling ad copy, and conversion tracking to maximize ROI and drive quality leads.",
+      results: [
+        { metric: "Conversions", value: "1,598", description: "New patient leads" },
+        { metric: "Conversion Rate", value: "21.68%", description: "Above industry average" },
+        { metric: "Clicks", value: "1,829", description: "Qualified traffic" },
+        { metric: "Cost/Conversion", value: "$204.94", description: "Efficient CPA" },
+      ],
+      services: ["Google Ads Management", "Campaign Optimization", "Conversion Tracking", "Ad Copywriting"],
+      testimonial: "Our patient bookings have skyrocketed since working with Patane Creative on our Google Ads campaigns.",
+      testimonialAuthor: "Soma Dental Team"
+    },
+    {
+      id: 6,
+      title: "Tropix Beverages - Social Media Advertising",
+      category: "Social Media Marketing",
+      platform: "Facebook & Instagram Ads",
+      client: "Tropix Beverages",
+      duration: "3 months",
+      icon: TrendingUp,
+      images: [tropixMarketingDashboard],
+      challenge: "The beverage brand needed to expand their reach and drive awareness across social media platforms while maintaining cost efficiency.",
+      solution: "Developed comprehensive Facebook and Instagram advertising strategy with audience targeting, creative optimization, and multi-platform distribution.",
+      results: [
+        { metric: "Reach", value: "175K", description: "People reached" },
+        { metric: "Impressions", value: "144K", description: "Ad views" },
+        { metric: "Clicks", value: "1,027", description: "Engaged users" },
+        { metric: "Avg CPC", value: "$1.27", description: "Cost efficient" },
+      ],
+      services: ["Facebook Ads", "Instagram Ads", "Audience Targeting", "Creative Strategy"],
+      testimonial: "The reach we achieved with our advertising budget exceeded all expectations. Great ROI!",
+      testimonialAuthor: "Tropix Beverages Marketing Team"
+    },
+    {
+      id: 7,
+      title: "Urban Pet Club - SEO Optimization",
+      category: "SEO & Content",
+      platform: "E-commerce",
+      client: "Urban Pet Club",
+      duration: "Ongoing",
+      icon: Target,
+      images: [seoOptimizationDashboard],
+      challenge: "The pet supply store needed to improve their organic search visibility and on-page SEO to drive more qualified traffic.",
+      solution: "Conducted comprehensive SEO audit and implemented on-page optimizations including meta data, page structure, server configuration, and content quality improvements.",
+      results: [
+        { metric: "On-Page Score", value: "78%", description: "SEO health" },
+        { metric: "Meta Data", value: "85%", description: "Optimized" },
+        { metric: "Page Structure", value: "92%", description: "Well organized" },
+        { metric: "Server", value: "100%", description: "Fully optimized" },
+      ],
+      services: ["SEO Audit", "On-Page Optimization", "Meta Data", "Content Strategy"],
+      testimonial: "Our organic traffic has steadily increased since implementing the SEO recommendations.",
+      testimonialAuthor: "Urban Pet Club Owner"
     }
   ];
 
