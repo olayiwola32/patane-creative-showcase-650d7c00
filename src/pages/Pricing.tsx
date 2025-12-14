@@ -193,10 +193,16 @@ const Pricing = () => {
             Contact us today for a personalized quote tailored to your project
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-            <div className="flex items-center justify-center gap-3">
-              <Mail className="h-5 w-5 text-accent" />
-              <span className="font-medium">team.patanecreative@gmail.com</span>
+          <div className="flex flex-col gap-4 justify-center mb-12">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
+              <div className="flex items-center justify-center gap-3">
+                <Mail className="h-5 w-5 text-accent" />
+                <span className="font-medium">team.patanecreative@gmail.com</span>
+              </div>
+              <div className="flex items-center justify-center gap-3">
+                <Mail className="h-5 w-5 text-accent" />
+                <span className="font-medium">info@patanecreative.site</span>
+              </div>
             </div>
             <div className="flex items-center justify-center gap-3">
               <Phone className="h-5 w-5 text-accent" />
