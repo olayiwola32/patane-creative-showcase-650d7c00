@@ -54,7 +54,7 @@ const Portfolio = () => {
       duration: "Ongoing",
       icon: Mail,
       images: [autumnBliss3MonthDashboard, klaviyoRevenue, klaviyoFlows, klaviyoCampaigns, autumnBlissSales, autumnBlissRedesign, storeAuditResults, googleTagManagerSetup],
-      challenge: "The boutique needed a complete email marketing strategy to increase customer retention, recover abandoned carts, and drive consistent revenue from email campaigns.",
+      challenge: "The health and beauty store needed a complete email marketing strategy to increase customer retention, recover abandoned carts, and drive consistent revenue from email campaigns.",
       solution: "Implemented comprehensive Klaviyo email flows including abandoned cart recovery, browse abandonment, customer winback, welcome series with discounts, strategic email campaigns, Google Tag Manager setup, and full store audit optimization.",
       results: [
         { metric: "Sessions", value: "1,809", description: "+276% increase" },
