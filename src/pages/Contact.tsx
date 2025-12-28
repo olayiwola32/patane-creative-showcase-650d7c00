@@ -234,7 +234,7 @@ const Contact = () => {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground">+1 (513) 655-1912</p>
+                    <p className="text-muted-foreground">+1 (682) 557-8020</p>
                     <p className="text-sm text-muted-foreground mt-2">
                       Message us on WhatsApp for quick responses
                     </p>
