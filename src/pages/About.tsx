@@ -1,9 +1,10 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Users, Target, Award, Heart, User } from "lucide-react";
+import { Users, Target, Award, Heart } from "lucide-react";
 import teamImage from "@/assets/team-image.jpg";
 import seanImage from "@/assets/team-sean.jpg";
+import rossImage from "@/assets/team-ross.jpg";
 
 const About = () => {
   const values = [
@@ -117,8 +118,12 @@ const About = () => {
             {/* Ross Brown */}
             <Card className="border-border hover:shadow-lg transition-all duration-300 overflow-hidden">
               <CardContent className="p-6 text-center">
-                <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-accent bg-secondary flex items-center justify-center">
-                  <User className="w-16 h-16 text-muted-foreground" />
+                <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-accent">
+                  <img 
+                    src={rossImage} 
+                    alt="Ross Brown" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h3 className="text-xl font-semibold text-foreground mb-1">Ross Brown</h3>
                 <p className="text-accent font-medium mb-3">Marketing Specialist</p>
