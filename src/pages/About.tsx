@@ -3,8 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Users, Target, Award, Heart } from "lucide-react";
 import teamImage from "@/assets/team-image.jpg";
-import seanImage from "@/assets/team-sean.jpg";
-import rossImage from "@/assets/team-ross.jpg";
 
 const About = () => {
   const values = [
