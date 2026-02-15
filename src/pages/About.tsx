@@ -83,59 +83,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              The Experts Behind Your E-Commerce Success
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Meet the dedicated professionals committed to growing your business
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* Sean Q. */}
-            <Card className="border-border hover:shadow-lg transition-all duration-300 overflow-hidden">
-              <CardContent className="p-6 text-center">
-                <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-accent">
-                  <img 
-                    src={seanImage} 
-                    alt="Sean Q." 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-1">Sean Q.</h3>
-                <p className="text-accent font-medium mb-3">Founder & E-commerce Strategist</p>
-                <p className="text-muted-foreground text-sm">
-                  With 3+ years in e-commerce, Sean leads our strategy and development projects, 
-                  specializing in Shopify solutions and conversion optimization - SEO, email marketing/ads.
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* Ross Brown */}
-            <Card className="border-border hover:shadow-lg transition-all duration-300 overflow-hidden">
-              <CardContent className="p-6 text-center">
-                <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-accent">
-                  <img 
-                    src={rossImage} 
-                    alt="Ross Brown" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-1">Ross Brown</h3>
-                <p className="text-accent font-medium mb-3">Marketing Specialist</p>
-                <p className="text-muted-foreground text-sm">
-                  Ross handles all things marketing - social media ads, Video Ads, and Google campaigns.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       {/* Our Values */}
       <section className="py-20">
         <div className="container mx-auto px-4">
