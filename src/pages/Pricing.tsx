@@ -197,11 +197,7 @@ const Pricing = () => {
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
               <div className="flex items-center justify-center gap-3">
                 <Mail className="h-5 w-5 text-accent" />
-                <span className="font-medium">team.patanecreative@gmail.com</span>
-              </div>
-              <div className="flex items-center justify-center gap-3">
-                <Mail className="h-5 w-5 text-accent" />
-                <span className="font-medium">info@patanecreative.site</span>
+                <span className="font-medium">qoatech.pt@gmail.com</span>
               </div>
             </div>
             <div className="flex items-center justify-center gap-3">

@@ -37,7 +37,7 @@ const About = () => {
       {/* Header */}
       <section className="py-20 bg-gradient-to-r from-primary to-accent text-white">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">About Patane Creative</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">About QOA Tech</h1>
           <p className="text-xl max-w-3xl mx-auto text-white/90">
             Your trusted partner in e-commerce success, delivering expert solutions with passion and
             proven results.
@@ -50,13 +50,13 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <img src={teamImage} alt="Patane Creative Team" className="rounded-lg shadow-xl" />
+              <img src={teamImage} alt="QOA Tech Team" className="rounded-lg shadow-xl" />
             </div>
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Our Story</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  Patane Creative was founded with a clear mission: to empower e-commerce businesses
+                  QOA Tech was founded with a clear mission: to empower e-commerce businesses
                   with the tools, strategies, and expertise they need to thrive in the digital
                   marketplace.
                 </p>

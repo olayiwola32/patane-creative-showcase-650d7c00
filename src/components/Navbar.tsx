@@ -25,7 +25,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="Patane Creative Logo" className="h-24 w-auto hover-scale animate-fade-in" />
+            <img src={logo} alt="QOA Tech Logo" className="h-24 w-auto hover-scale animate-fade-in" />
           </Link>
 
           {/* Desktop Navigation */}

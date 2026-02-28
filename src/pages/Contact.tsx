@@ -203,8 +203,7 @@ const Contact = () => {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground">team.patanecreative@gmail.com</p>
-                    <p className="text-muted-foreground">info@patanecreative.site</p>
+                    <p className="text-muted-foreground">qoatech.pt@gmail.com</p>
                     <p className="text-sm text-muted-foreground mt-2">
                       For general inquiries and project discussions
                     </p>

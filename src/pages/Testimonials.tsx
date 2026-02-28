@@ -9,7 +9,7 @@ const Testimonials = () => {
       name: "Sarah Mitchell",
       business: "Bella Fashion Boutique",
       rating: 5,
-      text: "Patane Creative completely transformed our Shopify store! The rebrand was exactly what we needed. Our conversion rate increased by 45% in just two months. They truly understand e-commerce.",
+      text: "QOA Tech completely transformed our Shopify store! The rebrand was exactly what we needed. Our conversion rate increased by 45% in just two months. They truly understand e-commerce.",
       project: "Shopify Store Rebrand & SEO",
     },
     {
@@ -37,7 +37,7 @@ const Testimonials = () => {
       name: "Lisa Anderson",
       business: "Handmade Jewelry Co",
       rating: 5,
-      text: "From store setup to ongoing support, Patane Creative has been amazing. They fixed technical issues we'd been struggling with for months and made our Wix store beautiful and functional.",
+      text: "From store setup to ongoing support, QOA Tech has been amazing. They fixed technical issues we'd been struggling with for months and made our Wix store beautiful and functional.",
       project: "Wix Development & Technical Support",
     },
     {
@@ -67,7 +67,7 @@ const Testimonials = () => {
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Client Testimonials</h1>
           <p className="text-xl max-w-3xl mx-auto text-white/90">
             Don't just take our word for it—hear what our satisfied clients have to say about
-            working with Patane Creative.
+            working with QOA Tech.
           </p>
         </div>
       </section>

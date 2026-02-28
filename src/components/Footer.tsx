@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <img src={logo} alt="Patane Creative Logo" className="h-20 w-auto" />
+            <img src={logo} alt="QOA Tech Logo" className="h-20 w-auto" />
             <p className="text-sm text-muted-foreground">
               Your trusted e-commerce partner for Shopify, Wix, and digital marketing solutions.
             </p>
@@ -50,10 +50,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Mail size={16} className="text-accent" />
-                <div>
-                  <div>team.patanecreative@gmail.com</div>
-                  <div>info@patanecreative.site</div>
-                </div>
+                <div>qoatech.pt@gmail.com</div>
               </li>
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Phone size={16} className="text-accent" />
@@ -69,7 +66,7 @@ const Footer = () => {
 
         <div className="mt-8 pt-8 border-t border-border text-center">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Patane Creative. All rights reserved.
+            © {new Date().getFullYear()} QOA Tech. All rights reserved.
           </p>
         </div>
       </div>
