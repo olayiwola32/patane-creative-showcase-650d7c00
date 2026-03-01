@@ -69,7 +69,7 @@ const handler = async (req: Request): Promise<Response> => {
       },
       body: JSON.stringify({
         from: "QOA Tech <onboarding@resend.dev>",
-        to: ["qoatech.pt@gmail.com"],
+        to: ["qoatechcreative@gmail.com"],
         reply_to: email,
         subject: `New Contact Form Submission from ${name}`,
         html: `
