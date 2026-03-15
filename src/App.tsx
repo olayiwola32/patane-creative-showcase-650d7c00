@@ -11,6 +11,7 @@ import Testimonials from "./pages/Testimonials";
 import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
 import Pricing from "./pages/Pricing";
+import Checkout from "./pages/Checkout";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
