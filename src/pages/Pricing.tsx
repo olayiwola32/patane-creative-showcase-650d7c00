@@ -1,7 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle2, Mail, Phone } from "lucide-react";
+import { CheckCircle2, Mail, Phone, ShieldCheck } from "lucide-react";
+import { useEffect } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 const Pricing = () => {
   const serviceCategories = [
