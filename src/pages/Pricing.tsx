@@ -76,6 +76,58 @@ const Pricing = () => {
         </div>
       </section>
 
+      {/* Fixed-Price Services */}
+      <section className="py-20 px-4 bg-accent/5">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Fixed-Price Services
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Ready-to-purchase solutions at transparent, fixed prices
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <Card className="hover-scale border-accent/30 relative overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-accent" />
+              <CardHeader>
+                <div className="flex items-center gap-2 mb-2">
+                  <ShieldCheck className="h-6 w-6 text-accent" />
+                  <CardTitle className="text-xl">SSL Certificate Fix</CardTitle>
+                </div>
+                <CardDescription>
+                  Complete SSL setup, configuration, and redirect fixes
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="mb-4">
+                  <span className="text-4xl font-bold">$120</span>
+                  <span className="text-muted-foreground ml-1">one-time</span>
+                </div>
+                <ul className="space-y-2 mb-6">
+                  {[
+                    "SSL certificate installation",
+                    "HTTPS redirect configuration",
+                    "Mixed content fixes",
+                    "Browser compatibility check",
+                    "Post-setup verification",
+                  ].map((feature, i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm">
+                      <CheckCircle2 className="h-4 w-4 text-accent mt-0.5 flex-shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Button asChild className="w-full" variant="hero" size="lg">
+                  <Link to="/checkout?service=ssl-fix">Buy Now — $120</Link>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Service Categories */}
       <section className="py-20 px-4 bg-secondary/30">
         <div className="container mx-auto max-w-6xl">
