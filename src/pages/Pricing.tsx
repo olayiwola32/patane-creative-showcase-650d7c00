@@ -6,6 +6,17 @@ import { useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 
 const Pricing = () => {
+  const [searchParams] = useSearchParams();
+  const { toast } = useToast();
+
+  useEffect(() => {
+    if (searchParams.get("payment") === "success") {
+      toast({
+        title: "Payment Successful! 🎉",
+        description: "Thank you for your payment. We'll be in touch shortly to get started.",
+      });
+    }
+  }, [searchParams, toast]);
   const serviceCategories = [
     {
       title: "Branding & Identity",
