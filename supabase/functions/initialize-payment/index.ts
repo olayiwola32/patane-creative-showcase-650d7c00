@@ -20,6 +20,37 @@ const paymentSchema = z.object({
   callback_url: z.string().url().optional(),
 });
 
+async function getUsdToNgnRate(): Promise<number> {
+  try {
+    const response = await fetch(
+      "https://api.exchangerate-data.com/v1/latest?base=USD"
+    );
+    if (response.ok) {
+      const data = await response.json();
+      if (data?.rates?.NGN) return data.rates.NGN;
+    }
+  } catch (e) {
+    console.warn("Primary exchange API failed, trying fallback:", e);
+  }
+
+  // Fallback API
+  try {
+    const response = await fetch(
+      "https://open.er-api.com/v6/latest/USD"
+    );
+    if (response.ok) {
+      const data = await response.json();
+      if (data?.rates?.NGN) return data.rates.NGN;
+    }
+  } catch (e) {
+    console.warn("Fallback exchange API also failed:", e);
+  }
+
+  // Hard fallback rate (update periodically)
+  console.warn("Using fallback exchange rate of 1600 NGN/USD");
+  return 1600;
+}
+
 const handler = async (req: Request): Promise<Response> => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
@@ -48,10 +79,28 @@ const handler = async (req: Request): Promise<Response> => {
 
     const { email, amount, currency, metadata, callback_url } = validationResult.data;
 
-    // Paystack expects amount in the smallest currency unit (kobo for NGN, cents for USD)
-    const amountInSmallestUnit = Math.round(amount * 100);
+    // Convert USD to NGN for Paystack (which deposits in NGN)
+    let amountInSmallestUnit: number;
+    let paystackCurrency = "NGN";
+    let exchangeRate: number | null = null;
 
-    console.log("Initializing Paystack payment for:", email, "Amount:", amount, currency);
+    if (currency === "USD") {
+      exchangeRate = await getUsdToNgnRate();
+      const ngnAmount = amount * exchangeRate;
+      amountInSmallestUnit = Math.round(ngnAmount * 100); // kobo
+      console.log(`Converting $${amount} USD → ₦${ngnAmount.toFixed(2)} NGN (rate: ${exchangeRate})`);
+    } else {
+      amountInSmallestUnit = Math.round(amount * 100);
+      paystackCurrency = currency;
+    }
+
+    const enrichedMetadata = {
+      ...metadata,
+      original_amount_usd: amount,
+      exchange_rate: exchangeRate,
+    };
+
+    console.log("Initializing Paystack payment for:", email, "Amount:", amountInSmallestUnit / 100, paystackCurrency);
 
     const paystackResponse = await fetch("https://api.paystack.co/transaction/initialize", {
       method: "POST",
@@ -62,8 +111,8 @@ const handler = async (req: Request): Promise<Response> => {
       body: JSON.stringify({
         email,
         amount: amountInSmallestUnit,
-        currency,
-        metadata,
+        currency: paystackCurrency,
+        metadata: enrichedMetadata,
         callback_url,
       }),
     });
@@ -82,6 +131,8 @@ const handler = async (req: Request): Promise<Response> => {
         authorization_url: paystackData.data.authorization_url,
         reference: paystackData.data.reference,
         access_code: paystackData.data.access_code,
+        exchange_rate: exchangeRate,
+        ngn_amount: exchangeRate ? (amount * exchangeRate) : null,
       }),
       {
         status: 200,
