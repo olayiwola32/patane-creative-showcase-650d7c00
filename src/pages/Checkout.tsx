@@ -191,7 +191,7 @@ const Checkout = () => {
                   )}
                 </Button>
                 <p className="text-xs text-center text-muted-foreground">
-                  You'll be redirected to Paystack's secure checkout. The amount will be converted to NGN at the current exchange rate.
+                  You'll be redirected to Paystack's secure checkout.
                 </p>
               </CardContent>
             </Card>
