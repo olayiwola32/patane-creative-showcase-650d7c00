@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone } from "lucide-react";
+import { Mail, Phone, Instagram } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const Footer = () => {
@@ -59,6 +59,17 @@ const Footer = () => {
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Phone size={16} className="text-accent" />
                 WhatsApp: +1 (682) 557-8020
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/qoacreative_tech?igsh=NWRzOWNwemR2MnMz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
+                >
+                  <Instagram size={16} className="text-accent" />
+                  @qoacreative_tech
+                </a>
               </li>
             </ul>
           </div>
