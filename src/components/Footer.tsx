@@ -60,6 +60,17 @@ const Footer = () => {
                 <Phone size={16} className="text-accent" />
                 WhatsApp: +1 (682) 557-8020
               </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/qoacreative_tech?igsh=NWRzOWNwemR2MnMz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
+                >
+                  <Instagram size={16} className="text-accent" />
+                  @qoacreative_tech
+                </a>
+              </li>
             </ul>
           </div>
         </div>
