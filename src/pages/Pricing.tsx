@@ -1,7 +1,7 @@
 import { Link, useSearchParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle2, Mail, Phone, ShieldCheck } from "lucide-react";
+import { CheckCircle2, Mail, Phone, ShieldCheck, Shield } from "lucide-react";
 import { useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -17,6 +17,7 @@ const Pricing = () => {
       });
     }
   }, [searchParams, toast]);
+
   const serviceCategories = [
     {
       title: "Branding & Identity",
@@ -51,6 +52,41 @@ const Pricing = () => {
         "Interactive prototypes"
       ]
     }
+  ];
+
+  const fixedServices = [
+    {
+      id: "ssl-fix",
+      icon: ShieldCheck,
+      title: "Basic SSL Certificate Renewal Fix",
+      description: "Complete SSL setup, configuration, and redirect fixes",
+      price: 121.45,
+      features: [
+        "SSL certificate installation",
+        "HTTPS redirect configuration",
+        "Mixed content fixes",
+        "Browser compatibility check",
+        "Post-setup verification",
+      ],
+    },
+    {
+      id: "ssl-standard",
+      icon: Shield,
+      title: "Standard SSL Certificate + ACME Protocol Fix",
+      description: "Everything in Basic SSL Renewal plus advanced SSL & protocol upgrades",
+      price: 238.49,
+      popular: true,
+      features: [
+        "Everything in Basic SSL Renewal Fix",
+        "Upgrade to Wildcard SSL Certificate",
+        "Secures primary domain & all subdomains",
+        "Restores online visibility lost during SSL inactivity",
+        "Greater coverage & flexibility than basic SSL",
+        "Update to ACME v2 Protocol",
+        "Restores automatic SSL renewal",
+        "Prevents future renewal failures",
+      ],
+    },
   ];
 
   return (
@@ -88,42 +124,41 @@ const Pricing = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <Card className="hover-scale border-accent/30 relative overflow-hidden">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-accent" />
-              <CardHeader>
-                <div className="flex items-center gap-2 mb-2">
-                  <ShieldCheck className="h-6 w-6 text-accent" />
-                  <CardTitle className="text-xl">SSL Certificate Fix</CardTitle>
-                </div>
-                <CardDescription>
-                  Complete SSL setup, configuration, and redirect fixes
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="mb-4">
-                  <span className="text-4xl font-bold">$120</span>
-                  <span className="text-muted-foreground ml-1">one-time</span>
-                </div>
-                <ul className="space-y-2 mb-6">
-                  {[
-                    "SSL certificate installation",
-                    "HTTPS redirect configuration",
-                    "Mixed content fixes",
-                    "Browser compatibility check",
-                    "Post-setup verification",
-                  ].map((feature, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm">
-                      <CheckCircle2 className="h-4 w-4 text-accent mt-0.5 flex-shrink-0" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Button asChild className="w-full" variant="hero" size="lg">
-                  <Link to="/checkout?service=ssl-fix">Buy Now — $120</Link>
-                </Button>
-              </CardContent>
-            </Card>
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {fixedServices.map((svc) => (
+              <Card key={svc.id} className={`hover-scale relative overflow-hidden ${svc.popular ? "border-accent shadow-lg" : "border-accent/30"}`}>
+                <div className="absolute top-0 left-0 right-0 h-1 bg-accent" />
+                {svc.popular && (
+                  <div className="absolute top-4 right-4 bg-accent text-accent-foreground text-xs font-bold px-3 py-1 rounded-full">
+                    POPULAR
+                  </div>
+                )}
+                <CardHeader>
+                  <div className="flex items-center gap-2 mb-2">
+                    <svc.icon className="h-6 w-6 text-accent" />
+                    <CardTitle className="text-xl">{svc.title}</CardTitle>
+                  </div>
+                  <CardDescription>{svc.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="mb-4">
+                    <span className="text-4xl font-bold">${svc.price.toFixed(2)}</span>
+                    <span className="text-muted-foreground ml-1">one-time</span>
+                  </div>
+                  <ul className="space-y-2 mb-6">
+                    {svc.features.map((feature, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm">
+                        <CheckCircle2 className="h-4 w-4 text-accent mt-0.5 flex-shrink-0" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Button asChild className="w-full" variant="hero" size="lg">
+                    <Link to={`/checkout?service=${svc.id}`}>Buy Now — ${svc.price.toFixed(2)}</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -185,65 +220,24 @@ const Pricing = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <Card className="border-border/50">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <CheckCircle2 className="h-5 w-5 text-accent" />
-                  Tailored Solutions
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Every business has unique needs. Our pricing reflects the specific 
-                  scope, complexity, and timeline of your project.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-border/50">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <CheckCircle2 className="h-5 w-5 text-accent" />
-                  No Hidden Costs
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  We provide detailed quotes with clear breakdowns, so you know 
-                  exactly what you're paying for.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-border/50">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <CheckCircle2 className="h-5 w-5 text-accent" />
-                  Flexible Options
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Whether you need a one-time project or ongoing design support, 
-                  we can create a package that fits your budget.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-border/50">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <CheckCircle2 className="h-5 w-5 text-accent" />
-                  Value-Driven
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Our focus is on delivering exceptional value and results that 
-                  exceed your investment.
-                </p>
-              </CardContent>
-            </Card>
+            {[
+              { title: "Tailored Solutions", desc: "Every business has unique needs. Our pricing reflects the specific scope, complexity, and timeline of your project." },
+              { title: "No Hidden Costs", desc: "We provide detailed quotes with clear breakdowns, so you know exactly what you're paying for." },
+              { title: "Flexible Options", desc: "Whether you need a one-time project or ongoing design support, we can create a package that fits your budget." },
+              { title: "Value-Driven", desc: "Our focus is on delivering exceptional value and results that exceed your investment." },
+            ].map((item, i) => (
+              <Card key={i} className="border-border/50">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-accent" />
+                    {item.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">{item.desc}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>

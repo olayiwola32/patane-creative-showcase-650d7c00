@@ -11,9 +11,14 @@ import { supabase } from "@/integrations/supabase/client";
 
 const SERVICES: Record<string, { name: string; price: number; description: string }> = {
   "ssl-fix": {
-    name: "SSL Certificate Fix",
-    price: 120.00,
+    name: "Basic SSL Certificate Renewal Fix",
+    price: 121.45,
     description: "Complete SSL certificate setup, configuration, and redirect fixes for your website.",
+  },
+  "ssl-standard": {
+    name: "Standard SSL Certificate + ACME Protocol Fix",
+    price: 238.49,
+    description: "Everything in Basic SSL Renewal plus Wildcard SSL upgrade and ACME v2 protocol restoration.",
   },
 };
 
@@ -104,6 +109,9 @@ const Checkout = () => {
       )}
     </button>
   );
+
+  const emailSubject = encodeURIComponent(`Payment Proof — ${service.name}`);
+  const emailBody = encodeURIComponent(`Hi QOA Tech,\n\nI have made a bank transfer of $${service.price.toFixed(2)} for the ${service.name} service.\n\nPlease find my payment proof attached.\n\nMy website URL: \n\nThank you!`);
 
   return (
     <div className="min-h-screen pt-32 pb-20 px-4">
@@ -264,7 +272,7 @@ const Checkout = () => {
                 </div>
 
                 <Button asChild variant="outline" className="w-full" size="lg">
-                  <a href="mailto:qoatechcreative@gmail.com?subject=Payment%20Proof%20-%20SSL%20Certificate%20Fix&body=Hi%20QOA%20Tech%2C%0A%0AI%20have%20made%20a%20bank%20transfer%20of%20%24120.00%20for%20the%20SSL%20Certificate%20Fix%20service.%0A%0APlease%20find%20my%20payment%20proof%20attached.%0A%0AMy%20website%20URL%3A%20%0A%0AThank%20you!">
+                  <a href={`mailto:qoatechcreative@gmail.com?subject=${emailSubject}&body=${emailBody}`}>
                     Send Payment Proof via Email
                   </a>
                 </Button>

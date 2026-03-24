@@ -50,7 +50,11 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Mail size={16} className="text-accent" />
-                <div>qoatechcreative@gmail.com</div>
+                <a href="mailto:hello@qoacreative.sbs" className="hover:text-accent transition-colors">hello@qoacreative.sbs</a>
+              </li>
+              <li className="flex items-center gap-2 text-sm text-muted-foreground">
+                <Mail size={16} className="text-accent" />
+                <a href="mailto:qoatechcreative@gmail.com" className="hover:text-accent transition-colors">qoatechcreative@gmail.com</a>
               </li>
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Phone size={16} className="text-accent" />
