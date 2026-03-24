@@ -202,8 +202,8 @@ const Home = () => {
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
             Let's discuss how we can help transform your online store and drive real results.
           </p>
-          <Button asChild variant="outline" size="lg" className="bg-white text-primary hover:bg-white/90">
-            <Link to="/contact">Get in Touch Today</Link>
+          <Button asChild variant="outline" size="lg" className="bg-white text-primary hover:bg-white/90 font-bold">
+            <Link to="/contact">Get in Touch</Link>
           </Button>
         </div>
       </section>
