@@ -9,7 +9,7 @@ const Testimonials = () => {
       name: "Sarah Mitchell",
       business: "Bella Fashion Boutique",
       rating: 5,
-      text: "QOA Tech completely transformed our Shopify store! The rebrand was exactly what we needed. Our conversion rate increased by 45% in just two months. They truly understand e-commerce.",
+      text: "QOA Creative Tech completely transformed our Shopify store! The rebrand was exactly what we needed. Our conversion rate increased by 45% in just two months. They truly understand e-commerce.",
       project: "Shopify Store Rebrand & SEO",
     },
     {
