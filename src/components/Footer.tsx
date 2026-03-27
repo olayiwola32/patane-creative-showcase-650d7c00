@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <img src={logo} alt="QOA Tech Logo" className="h-20 w-auto" />
+            <img src={logo} alt="QOA Creative Tech Logo" className="h-20 w-auto" />
             <p className="text-sm text-muted-foreground">
               Your trusted e-commerce partner for Shopify, Wix, and digital marketing solutions.
             </p>
