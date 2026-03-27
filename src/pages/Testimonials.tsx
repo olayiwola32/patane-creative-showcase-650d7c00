@@ -37,7 +37,7 @@ const Testimonials = () => {
       name: "Lisa Anderson",
       business: "Handmade Jewelry Co",
       rating: 5,
-      text: "From store setup to ongoing support, QOA Tech has been amazing. They fixed technical issues we'd been struggling with for months and made our Wix store beautiful and functional.",
+      text: "From store setup to ongoing support, QOA Creative Tech has been amazing. They fixed technical issues we'd been struggling with for months and made our Wix store beautiful and functional.",
       project: "Wix Development & Technical Support",
     },
     {
