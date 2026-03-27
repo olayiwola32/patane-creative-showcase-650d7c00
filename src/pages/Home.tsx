@@ -135,7 +135,7 @@ const Home = () => {
             </div>
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Why Choose QOA Tech?
+                Why Choose QOA Creative Tech?
               </h2>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">

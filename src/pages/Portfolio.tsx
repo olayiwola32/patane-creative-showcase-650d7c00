@@ -42,7 +42,7 @@ const Portfolio = () => {
         { metric: "Conversion Rate", value: "1.81%", description: "+80% improvement" },
       ],
       services: ["Store Management", "Traffic Optimization", "Sales Strategy", "Analytics"],
-      testimonial: "QOA Tech transformed our store performance. The results speak for themselves - our sales nearly doubled!",
+      testimonial: "QOA Creative Tech transformed our store performance. The results speak for themselves - our sales nearly doubled!",
       testimonialAuthor: "Cross Toss Trading Team"
     },
     {
@@ -126,7 +126,7 @@ const Portfolio = () => {
         { metric: "Cost/Conversion", value: "$204.94", description: "Efficient CPA" },
       ],
       services: ["Google Ads Management", "Campaign Optimization", "Conversion Tracking", "Ad Copywriting"],
-      testimonial: "Our patient bookings have skyrocketed since working with QOA Tech on our Google Ads campaigns.",
+      testimonial: "Our patient bookings have skyrocketed since working with QOA Creative Tech on our Google Ads campaigns.",
       testimonialAuthor: "Soma Dental Team"
     },
     {
