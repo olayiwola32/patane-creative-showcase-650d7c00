@@ -210,20 +210,6 @@ const Contact = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="border-border">
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-3 text-foreground">
-                      <Phone className="w-6 h-6 text-accent" />
-                      Call Us
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">+1 (210) 628-6741</p>
-                    <p className="text-sm text-muted-foreground mt-2">
-                      Schedule a call to discuss your project in detail
-                    </p>
-                  </CardContent>
-                </Card>
 
                 <Card className="border-border">
                   <CardHeader>
