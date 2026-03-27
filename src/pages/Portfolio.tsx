@@ -126,7 +126,7 @@ const Portfolio = () => {
         { metric: "Cost/Conversion", value: "$204.94", description: "Efficient CPA" },
       ],
       services: ["Google Ads Management", "Campaign Optimization", "Conversion Tracking", "Ad Copywriting"],
-      testimonial: "Our patient bookings have skyrocketed since working with QOA Tech on our Google Ads campaigns.",
+      testimonial: "Our patient bookings have skyrocketed since working with QOA Creative Tech on our Google Ads campaigns.",
       testimonialAuthor: "Soma Dental Team"
     },
     {

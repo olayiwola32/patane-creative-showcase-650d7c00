@@ -50,7 +50,7 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <img src={teamImage} alt="QOA Tech Team" className="rounded-lg shadow-xl" />
+              <img src={teamImage} alt="QOA Creative Tech Team" className="rounded-lg shadow-xl" />
             </div>
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Our Story</h2>

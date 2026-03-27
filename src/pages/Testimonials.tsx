@@ -67,7 +67,7 @@ const Testimonials = () => {
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Client Testimonials</h1>
           <p className="text-xl max-w-3xl mx-auto text-white/90">
             Don't just take our word for it—hear what our satisfied clients have to say about
-            working with QOA Tech.
+            working with QOA Creative Tech.
           </p>
         </div>
       </section>

@@ -111,7 +111,7 @@ const Checkout = () => {
   );
 
   const emailSubject = encodeURIComponent(`Payment Proof — ${service.name}`);
-  const emailBody = encodeURIComponent(`Hi QOA Tech,\n\nI have made a bank transfer of $${service.price.toFixed(2)} for the ${service.name} service.\n\nPlease find my payment proof attached.\n\nMy website URL: \n\nThank you!`);
+  const emailBody = encodeURIComponent(`Hi QOA Creative Tech,\n\nI have made a bank transfer of $${service.price.toFixed(2)} for the ${service.name} service.\n\nPlease find my payment proof attached.\n\nMy website URL: \n\nThank you!`);
 
   return (
     <div className="min-h-screen pt-32 pb-20 px-4">
