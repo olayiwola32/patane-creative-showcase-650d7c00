@@ -56,7 +56,7 @@ const About = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Our Story</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  QOA Tech was founded with a clear mission: to empower e-commerce businesses
+                  QOA Creative Tech was founded with a clear mission: to empower e-commerce businesses
                   with the tools, strategies, and expertise they need to thrive in the digital
                   marketplace.
                 </p>
