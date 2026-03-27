@@ -37,7 +37,7 @@ const About = () => {
       {/* Header */}
       <section className="py-20 bg-gradient-to-r from-primary to-accent text-white">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">About QOA Tech</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">About QOA Creative Tech</h1>
           <p className="text-xl max-w-3xl mx-auto text-white/90">
             Your trusted partner in e-commerce success, delivering expert solutions with passion and
             proven results.
