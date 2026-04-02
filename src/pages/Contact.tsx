@@ -203,6 +203,7 @@ const Contact = () => {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
+                    <p className="text-muted-foreground">hello@qoacreative.sbs</p>
                     <p className="text-muted-foreground">qoatechcreative@gmail.com</p>
                     <p className="text-sm text-muted-foreground mt-2">
                       For general inquiries and project discussions
