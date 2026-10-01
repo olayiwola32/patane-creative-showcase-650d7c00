@@ -1,5 +1,5 @@
 const WhatsAppWidget = () => {
-  const phoneNumber = "16825578020"; // WhatsApp format: country code + number without special characters
+  const phoneNumber = "14173826911"; // WhatsApp format: country code + number without special characters
   const whatsappUrl = `https://wa.me/${phoneNumber}`;
 
   return (
