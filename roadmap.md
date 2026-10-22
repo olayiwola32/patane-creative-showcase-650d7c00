@@ -1,0 +1,6 @@
+- [ ] Refresh the shared visual foundation while preserving the current logo, colors, navigation, and contact details.
+- [ ] Rebuild the homepage with platform expertise, services, authentic portfolio highlights, process, verified team preview, and clear contact actions.
+- [ ] Redesign Services, About, Portfolio, Testimonials, Pricing, and Contact without removing content or changing contact/payment behavior.
+- [ ] Update app-specific title, description, and social metadata.
+- [ ] Verify responsive page rendering, important links/forms, and the latest build logs.
+- [ ] Pending user input: names, roles, optional bios, and photos for the three additional team members.
