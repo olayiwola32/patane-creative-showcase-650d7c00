@@ -1,206 +1,24 @@
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Users, Target, Award, Heart } from "lucide-react";
+import { ArrowRight, Award, Heart, Target, Users } from "lucide-react";
 import teamImage from "@/assets/team-image.jpg";
 
 const About = () => {
   const values = [
-    {
-      icon: <Target className="w-10 h-10 text-accent" />,
-      title: "Results-Focused",
-      description:
-        "Every strategy and decision is driven by measurable outcomes and your business growth.",
-    },
-    {
-      icon: <Heart className="w-10 h-10 text-accent" />,
-      title: "Client-Centered",
-      description:
-        "Your success is our success. We prioritize your goals and work as an extension of your team.",
-    },
-    {
-      icon: <Award className="w-10 h-10 text-accent" />,
-      title: "Quality Excellence",
-      description:
-        "We never compromise on quality. Every project receives our full attention and expertise.",
-    },
-    {
-      icon: <Users className="w-10 h-10 text-accent" />,
-      title: "Collaborative Approach",
-      description:
-        "Transparent communication and partnership every step of the way to ensure alignment.",
-    },
+    { icon: Target, title: "Results-Focused", description: "Every strategy and decision is guided by measurable outcomes and your business growth." },
+    { icon: Heart, title: "Client-Centered", description: "We prioritize your goals and work alongside you as an extension of your team." },
+    { icon: Award, title: "Quality Excellence", description: "Every project receives careful attention and the right expertise for the work." },
+    { icon: Users, title: "Collaborative", description: "Transparent communication and partnership keep the work aligned at every step." },
   ];
 
   return (
     <div>
-      {/* Header */}
-      <section className="py-20 bg-gradient-to-r from-primary to-accent text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">About QOA Creative Tech</h1>
-          <p className="text-xl max-w-3xl mx-auto text-white/90">
-            Your trusted partner in e-commerce success, delivering expert solutions with passion and
-            proven results.
-          </p>
-        </div>
-      </section>
-
-      {/* Our Story */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <img src={teamImage} alt="QOA Creative Tech Team" className="rounded-lg shadow-xl" />
-            </div>
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Our Story</h2>
-              <div className="space-y-4 text-muted-foreground">
-                <p>
-                  QOA Creative Tech was founded with a clear mission: to empower e-commerce businesses
-                  with the tools, strategies, and expertise they need to thrive in the digital
-                  marketplace.
-                </p>
-                <p>
-                  With over 3 years of hands-on experience, our team of 2 dedicated specialists has
-                  helped numerous store owners transform their online presence and achieve remarkable
-                  growth. From small startups to established brands, we've partnered with businesses
-                  across diverse industries.
-                </p>
-                <p>
-                  What sets us apart is our comprehensive approach. We don't just build stores or run
-                  ads—we become your strategic partner, understanding your business inside and out,
-                  and crafting solutions that align with your unique goals and vision.
-                </p>
-                <p className="font-semibold text-foreground">
-                  Today, we're proud to be a trusted name in e-commerce solutions, with a track
-                  record of satisfied clients and successful projects that speak for themselves.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Values */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Our Values</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              The principles that guide everything we do and ensure exceptional results for our
-              clients
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {values.map((value, index) => (
-              <Card key={index} className="border-border hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-6 text-center">
-                  <div className="flex justify-center mb-4">{value.icon}</div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">{value.title}</h3>
-                  <p className="text-muted-foreground">{value.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Expertise */}
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 text-center">
-              Our Expertise
-            </h2>
-
-            <div className="space-y-6">
-              <Card className="border-border">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-foreground mb-3">
-                    E-Commerce Platform Specialists
-                  </h3>
-                  <p className="text-muted-foreground">
-                    Deep expertise in Shopify and Wix platforms, including custom development, theme
-                    customization, app integrations, and performance optimization. We know these
-                    platforms inside and out.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-border">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-foreground mb-3">
-                    Digital Marketing Professionals
-                  </h3>
-                  <p className="text-muted-foreground">
-                    Proven track record in SEO, email marketing with Klaviyo, social media
-                    advertising, and Google Ads management. We create data-driven campaigns that
-                    deliver measurable ROI.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-border">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-foreground mb-3">
-                    Technical Problem Solvers
-                  </h3>
-                  <p className="text-muted-foreground">
-                    Expert backend developers who can troubleshoot complex issues, optimize site
-                    performance, implement custom functionality, and ensure your store operates
-                    flawlessly.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Team Stats */}
-      <section className="py-20 bg-secondary">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">By the Numbers</h2>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-5xl font-bold text-accent mb-2">3+</div>
-              <div className="text-muted-foreground">Years of Experience</div>
-            </div>
-            <div className="text-center">
-              <div className="text-5xl font-bold text-accent mb-2">50+</div>
-              <div className="text-muted-foreground">Successful Projects</div>
-            </div>
-            <div className="text-center">
-              <div className="text-5xl font-bold text-accent mb-2">2</div>
-              <div className="text-muted-foreground">Dedicated Specialists</div>
-            </div>
-            <div className="text-center">
-              <div className="text-5xl font-bold text-accent mb-2">100%</div>
-              <div className="text-muted-foreground">Client Satisfaction</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-            Let's Work Together
-          </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Ready to partner with a team that's committed to your success? Let's discuss your
-            project.
-          </p>
-          <Button asChild variant="hero" size="lg">
-            <Link to="/contact">Get in Touch</Link>
-          </Button>
-        </div>
-      </section>
+      <section className="bg-primary py-16 text-primary-foreground md:py-20"><div className="container mx-auto px-4"><p className="mb-4 text-xs font-semibold uppercase tracking-[0.12em] text-accent">About QOA Creative Tech</p><h1 className="mb-5 max-w-3xl text-4xl font-bold leading-tight md:text-5xl">Better digital experiences, made possible by thoughtful partnership.</h1><p className="max-w-2xl text-lg leading-relaxed text-primary-foreground/80">We bring e-commerce development, marketing, design, and technology together to help businesses build and improve their online presence.</p></div></section>
+      <section className="py-16 md:py-20"><div className="container mx-auto grid gap-10 px-4 md:grid-cols-[1fr_1fr] md:items-center"><div className="relative"><img src={teamImage} alt="QOA Creative Tech collaborators working on an online business" className="aspect-[4/3] w-full object-cover" /><div className="absolute bottom-0 left-0 bg-background px-5 py-4"><p className="text-sm font-semibold">A hands-on digital growth partner</p></div></div><div><p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-accent">Our story</p><h2 className="mb-5 text-3xl font-bold md:text-4xl">Built around real business needs.</h2><div className="space-y-4 leading-relaxed text-muted-foreground"><p>QOA Creative Tech was founded with a clear mission: to empower e-commerce businesses with the tools, strategies, and expertise they need to thrive in the digital marketplace.</p><p>With over 3 years of hands-on experience, our team of 2 dedicated specialists has helped store owners improve their online presence across diverse industries.</p><p>What sets us apart is our comprehensive approach. We don’t just build stores or run ads—we become your strategic partner, understanding your business and shaping practical solutions around your goals.</p><p className="font-semibold text-foreground">We bring together creative, technical, and commercial capabilities to make each stage of online growth more connected.</p></div></div></div></section>
+      <section className="bg-secondary py-16 md:py-20"><div className="container mx-auto px-4"><div className="mb-10 max-w-2xl"><p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-accent">What guides us</p><h2 className="text-3xl font-bold md:text-4xl">A thoughtful way to work.</h2><p className="mt-3 text-muted-foreground">The principles behind our client relationships and day-to-day work.</p></div><div className="grid gap-x-9 sm:grid-cols-2 lg:grid-cols-4">{values.map((value, index) => <article key={value.title} className="border-t border-border py-6"><span className="mb-5 inline-flex text-accent"><value.icon className="h-6 w-6" /></span><span className="mb-3 block text-xs font-semibold text-accent">0{index + 1}</span><h3 className="mb-2 text-lg font-semibold">{value.title}</h3><p className="text-sm leading-relaxed text-muted-foreground">{value.description}</p></article>)}</div></div></section>
+      <section className="py-16 md:py-20"><div className="container mx-auto grid gap-10 px-4 md:grid-cols-[0.8fr_1.2fr] md:items-start"><div><p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-accent">Our expertise</p><h2 className="text-3xl font-bold md:text-4xl">Capabilities that connect.</h2></div><div className="grid gap-7 sm:grid-cols-2"><article className="border-t border-border pt-5"><h3 className="mb-2 text-lg font-semibold">E-commerce platforms</h3><p className="text-sm leading-relaxed text-muted-foreground">We work across Shopify, Wix, WooCommerce, BigCommerce, Squarespace Commerce, Adobe Commerce, and other suitable platforms.</p></article><article className="border-t border-border pt-5"><h3 className="mb-2 text-lg font-semibold">Digital marketing</h3><p className="text-sm leading-relaxed text-muted-foreground">SEO, Klaviyo email marketing, social media advertising, and Google Ads—connected to the customer journey.</p></article><article className="border-t border-border pt-5"><h3 className="mb-2 text-lg font-semibold">Creative experiences</h3><p className="text-sm leading-relaxed text-muted-foreground">Brand-led store design and customer experiences that make it easier to understand and shop your products.</p></article><article className="border-t border-border pt-5"><h3 className="mb-2 text-lg font-semibold">Technical support</h3><p className="text-sm leading-relaxed text-muted-foreground">Practical troubleshooting, integrations, optimization, and security improvements for your online business.</p></article></div></div></section>
+      <section className="border-y border-border bg-secondary py-10"><div className="container mx-auto grid grid-cols-2 gap-8 px-4 text-center sm:grid-cols-4">{[{ number: "3+", label: "Years of experience" }, { number: "50+", label: "Successful projects" }, { number: "2", label: "Dedicated specialists" }, { number: "100%", label: "Client satisfaction" }].map((stat) => <div key={stat.label}><span className="block text-3xl font-bold text-accent">{stat.number}</span><span className="mt-2 block text-sm text-muted-foreground">{stat.label}</span></div>)}</div></section>
+      <section className="py-16 md:py-20"><div className="container mx-auto flex flex-col gap-6 px-4 sm:flex-row sm:items-center sm:justify-between"><div><h2 className="mb-2 text-3xl font-bold">Let’s work together.</h2><p className="text-muted-foreground">Tell us where you want to take your online business.</p></div><Button asChild size="lg" variant="hero"><Link to="/contact">Get in Touch <ArrowRight /></Link></Button></div></section>
     </div>
   );
 };
