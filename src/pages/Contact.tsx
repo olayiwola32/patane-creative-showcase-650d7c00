@@ -65,23 +65,22 @@ const Contact = () => {
 
   return (
     <div>
-      {/* Header */}
-      <section className="py-20 bg-gradient-to-r from-primary to-accent text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Get in Touch</h1>
-          <p className="text-xl max-w-3xl mx-auto text-white/90">
-            Ready to take your e-commerce business to the next level? Let's discuss your project.
-          </p>
+      <section className="bg-primary py-16 text-primary-foreground md:py-20">
+        <div className="container mx-auto px-4">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.12em] text-accent">Contact QOA Creative Tech</p>
+          <h1 className="mb-5 max-w-3xl text-4xl font-bold md:text-5xl">Tell us what you’re working toward.</h1>
+          <p className="max-w-2xl text-lg leading-relaxed text-primary-foreground/80">Ready to improve your e-commerce business? Share a little about your project and we’ll be in touch within 24 hours.</p>
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="py-14 md:py-20">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
             {/* Contact Form */}
             <div>
-              <h2 className="text-3xl font-bold text-foreground mb-6">Send Us a Message</h2>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-accent">Project inquiry</p>
+              <h2 className="mb-7 text-3xl font-bold text-foreground">Start a conversation.</h2>
+              <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
                     Your Name *
@@ -117,7 +116,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="business"
-                    className="block text-sm font-medium text-foreground mb-2"
+                    className="mb-2 block text-sm font-medium text-foreground"
                   >
                     Business Name
                   </label>
@@ -135,7 +134,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="service"
-                    className="block text-sm font-medium text-foreground mb-2"
+                    className="mb-2 block text-sm font-medium text-foreground"
                   >
                     Service Interest
                   </label>
@@ -186,133 +185,64 @@ const Contact = () => {
             </div>
 
             {/* Contact Info */}
-            <div className="space-y-6">
+            <div className="space-y-7">
               <div>
-                <h2 className="text-3xl font-bold text-foreground mb-6">Contact Information</h2>
-                <p className="text-muted-foreground mb-8">
-                  Have questions? We're here to help. Reach out through any of these channels.
-                </p>
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-accent">Contact information</p>
+                <h2 className="mb-3 text-3xl font-bold text-foreground">Here to help you move forward.</h2>
+                <p className="text-muted-foreground">Have questions? Reach out through any of these channels.</p>
               </div>
 
-              <div className="space-y-4">
-                <Card className="border-border">
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-3 text-foreground">
-                      <Mail className="w-6 h-6 text-accent" />
-                      Email Us
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">hello@qoacreative.sbs</p>
-                    <p className="text-muted-foreground">qoatechcreative@gmail.com</p>
-                    <p className="text-sm text-muted-foreground mt-2">
-                      For general inquiries and project discussions
-                    </p>
-                  </CardContent>
-                </Card>
-
-
-                <Card className="border-border">
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-3 text-foreground">
-                      <Phone className="w-6 h-6 text-accent" />
-                      WhatsApp
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">+1 (417) 382-6911</p>
-                    <p className="text-sm text-muted-foreground mt-2">
-                      Message us on WhatsApp for quick responses
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card className="border-border">
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-3 text-foreground">
-                      <Clock className="w-6 h-6 text-accent" />
-                      Response Time
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">Within 24 hours</p>
-                    <p className="text-sm text-muted-foreground mt-2">
-                      We typically respond to all inquiries within one business day
-                    </p>
-                  </CardContent>
-                </Card>
+              <div className="divide-y divide-border border-y border-border">
+                <div className="py-5"><h3 className="mb-2 flex items-center gap-3 font-semibold text-foreground"><Mail className="h-5 w-5 text-accent" />Email Us</h3><div className="space-y-1 pl-8"><a href="mailto:hello@qoacreative.sbs" className="block break-all text-sm text-muted-foreground hover:text-accent">hello@qoacreative.sbs</a><a href="mailto:qoatechcreative@gmail.com" className="block break-all text-sm text-muted-foreground hover:text-accent">qoatechcreative@gmail.com</a><p className="mt-2 text-sm text-muted-foreground">For general inquiries and project discussions</p></div></div>
+                <div className="py-5"><h3 className="mb-2 flex items-center gap-3 font-semibold text-foreground"><Phone className="h-5 w-5 text-accent" />WhatsApp</h3><div className="pl-8"><a href="https://wa.me/14173826911" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-accent">+1 (417) 382-6911</a><p className="mt-2 text-sm text-muted-foreground">Message us on WhatsApp for quick responses</p></div></div>
+                <div className="py-5"><h3 className="mb-2 flex items-center gap-3 font-semibold text-foreground"><Clock className="h-5 w-5 text-accent" />Response Time</h3><div className="pl-8"><p className="text-sm text-muted-foreground">Within 24 hours</p><p className="mt-2 text-sm text-muted-foreground">We typically respond to all inquiries within one business day</p></div></div>
               </div>
 
-              <Card className="border-accent bg-accent/5">
-                <CardContent className="p-6">
-                  <h3 className="font-semibold text-foreground mb-2">Ready to Get Started?</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Book a free 30-minute consultation to discuss your e-commerce goals and how we
-                    can help you achieve them.
-                  </p>
-                </CardContent>
-              </Card>
+              <div className="border-l-2 border-accent pl-5"><h3 className="mb-2 font-semibold text-foreground">Ready to get started?</h3><p className="text-sm leading-relaxed text-muted-foreground">Book a free 30-minute consultation to discuss your e-commerce goals and how we can help you achieve them.</p></div>
             </div>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-muted">
+      <section className="bg-secondary py-16 md:py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
-            Frequently Asked Questions
-          </h2>
+          <p className="mb-3 text-center text-xs font-semibold uppercase tracking-[0.12em] text-accent">A few helpful details</p>
+          <h2 className="mb-10 text-center text-3xl font-bold text-foreground md:text-4xl">Frequently asked questions</h2>
 
-          <div className="max-w-3xl mx-auto space-y-6">
-            <Card className="border-border">
-              <CardHeader>
-                <CardTitle className="text-foreground">What is your typical project timeline?</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
+          <div className="mx-auto max-w-3xl divide-y divide-border border-y border-border">
+            <div className="py-5">
+                <h3 className="mb-2 text-lg font-semibold text-foreground">What is your typical project timeline?</h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">
                   Timelines vary based on project scope. A basic store setup takes 2-3 weeks, while
                   comprehensive rebrands can take 4-6 weeks. We'll provide a detailed timeline
                   during consultation.
                 </p>
-              </CardContent>
-            </Card>
+            </div>
 
-            <Card className="border-border">
-              <CardHeader>
-                <CardTitle className="text-foreground">Do you offer ongoing support?</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
+            <div className="py-5">
+                <h3 className="mb-2 text-lg font-semibold text-foreground">Do you offer ongoing support?</h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">
                   Yes! We offer flexible maintenance and support packages to ensure your store
                   continues to perform optimally after launch.
                 </p>
-              </CardContent>
-            </Card>
+            </div>
 
-            <Card className="border-border">
-              <CardHeader>
-                <CardTitle className="text-foreground">What is your pricing structure?</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
+            <div className="py-5">
+                <h3 className="mb-2 text-lg font-semibold text-foreground">What is your pricing structure?</h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">
                   We offer customized pricing based on your specific needs and project scope. Contact
                   us for a detailed quote tailored to your requirements.
                 </p>
-              </CardContent>
-            </Card>
+            </div>
 
-            <Card className="border-border">
-              <CardHeader>
-                <CardTitle className="text-foreground">Can you work with my existing store?</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
+            <div className="py-5">
+                <h3 className="mb-2 text-lg font-semibold text-foreground">Can you work with my existing store?</h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">
                   Absolutely! We specialize in both new store development and improving existing
                   stores through rebrands, optimization, and technical enhancements.
                 </p>
-              </CardContent>
-            </Card>
+            </div>
           </div>
         </div>
       </section>
