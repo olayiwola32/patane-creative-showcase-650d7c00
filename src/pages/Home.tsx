@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, BarChart3, Check, Code2, Mail, Search, ShoppingBag, Sparkles, Target, TrendingUp } from "lucide-react";
+import { ArrowRight, Check, Code2, Mail, Search, ShoppingBag, Sparkles, TrendingUp } from "lucide-react";
 import heroImage from "@/assets/hero-background.jpg";
 import crossTossDashboard from "@/assets/portfolio/cross-toss-dashboard.png";
 import autumnBlissSales from "@/assets/portfolio/autumn-bliss-sales.png";
@@ -38,10 +38,10 @@ const Home = () => {
 
   return (
     <div>
-      <section className="relative isolate flex min-h-[620px] items-center overflow-hidden bg-primary text-primary-foreground md:min-h-[680px]">
+      <section className="relative isolate flex min-h-[420px] items-center overflow-hidden bg-primary text-primary-foreground md:min-h-[480px]">
         <img src={heroImage} alt="A digital commerce team discussing an online store project" className="absolute inset-0 -z-20 h-full w-full object-cover object-center" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/45" />
-        <div className="container mx-auto grid items-center gap-12 px-4 py-20 md:grid-cols-[minmax(0,1fr)_300px] md:py-24">
+        <div className="container mx-auto grid items-center gap-12 px-4 py-16 lg:grid-cols-[minmax(0,1fr)_260px] lg:py-20">
           <div className="max-w-3xl">
             <div className="mb-7 flex items-center gap-3 text-sm font-semibold text-primary-foreground/80">
               <span className="h-px w-10 bg-accent" />
@@ -56,7 +56,7 @@ const Home = () => {
               <Button asChild size="lg" variant="outline" className="border-primary-foreground/50 bg-primary-foreground/10 text-primary-foreground hover:bg-primary-foreground hover:text-primary"><Link to="/portfolio">View Our Work</Link></Button>
             </div>
           </div>
-          <div className="hidden border-l border-primary-foreground/30 pl-8 md:block">
+          <div className="hidden border-l border-primary-foreground/30 pl-8 lg:block">
             <p className="mb-6 text-xs font-semibold uppercase tracking-[0.12em] text-primary-foreground/70">A connected growth partner</p>
             <div className="space-y-6">
               <div><span className="mb-1 block text-3xl font-bold text-accent">3+</span><span className="text-sm text-primary-foreground/80">Years of experience</span></div>
