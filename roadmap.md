@@ -1,6 +1,6 @@
-- [ ] Refresh the shared visual foundation while preserving the current logo, colors, navigation, and contact details.
-- [ ] Rebuild the homepage with platform expertise, services, authentic portfolio highlights, process, verified team preview, and clear contact actions.
-- [ ] Redesign Services, About, Portfolio, Testimonials, Pricing, and Contact without removing content or changing contact/payment behavior.
-- [ ] Update app-specific title, description, and social metadata.
-- [ ] Verify responsive page rendering, important links/forms, and the latest build logs.
-- [ ] Pending user input: names, roles, optional bios, and photos for the three additional team members.
+- [x] Refresh the shared visual foundation while preserving the current logo, colors, navigation, and contact details.
+- [x] Rebuild the homepage with platform expertise, services, authentic portfolio highlights, process, verified team preview, and clear contact actions.
+- [x] Redesign Services, About, Portfolio, Testimonials, Pricing, and Contact without removing content or changing contact/payment behavior.
+- [x] Update app-specific title, description, and social metadata.
+- [x] Verify responsive page rendering, all 18 portfolio images, important links/forms, preserved fixed prices and checkout routes, and the latest build logs.
+- [ ] Pending user input: names, roles, optional bios, and photos for the three additional team members needed for the requested five-person team.
