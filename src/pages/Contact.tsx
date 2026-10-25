@@ -146,13 +146,17 @@ const Contact = () => {
                   >
                     <option value="">Select a service</option>
                     <option value="shopify">Shopify Development</option>
+                    <option value="woocommerce">WooCommerce Development</option>
                     <option value="wix">Wix Solutions</option>
+                    <option value="bigcommerce">BigCommerce Solutions</option>
+                    <option value="squarespace">Squarespace Commerce</option>
+                    <option value="adobe-commerce">Adobe Commerce</option>
                     <option value="rebrand">Store Rebrand & Revamp</option>
-                    <option value="seo">SEO Optimization</option>
-                    <option value="email">Email Marketing</option>
+                    <option value="seo">SEO & Search Visibility</option>
+                    <option value="email">Email Marketing & Klaviyo</option>
                     <option value="social">Social Media Marketing</option>
-                    <option value="ads">Google Ads</option>
-                    <option value="technical">Technical Support</option>
+                    <option value="ads">Paid Advertising & Google Ads</option>
+                    <option value="technical">Technical Support & Security</option>
                     <option value="other">Other</option>
                   </select>
                 </div>
