@@ -1,6 +1,6 @@
 {
-  "name": "QOA Tech",
-  "short_name": "QOA Tech",
+  "name": "QOA Creative Tech",
+  "short_name": "QOA Creative",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -13,7 +13,7 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#1e293b",
-  "background_color": "#ffffff",
+  "theme_color": "#422d24",
+  "background_color": "#fdfcfb",
   "display": "standalone"
 }
