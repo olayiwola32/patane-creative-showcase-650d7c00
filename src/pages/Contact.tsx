@@ -146,7 +146,11 @@ const Contact = () => {
                   >
                     <option value="">Select a service</option>
                     <option value="shopify">Shopify Development</option>
+                    <option value="woocommerce">WooCommerce Development</option>
                     <option value="wix">Wix Solutions</option>
+                    <option value="bigcommerce">BigCommerce Solutions</option>
+                    <option value="squarespace">Squarespace Commerce</option>
+                    <option value="adobe-commerce">Adobe Commerce</option>
                     <option value="rebrand">Store Rebrand & Revamp</option>
                     <option value="seo">SEO Optimization</option>
                     <option value="email">Email Marketing</option>
