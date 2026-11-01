@@ -123,3 +123,65 @@ All colors MUST be HSL.
     letter-spacing: 0;
   }
 }
+
+/* ============= Motion utilities ============= */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@layer utilities {
+  .animate-marquee {
+    animation: marquee 32s linear infinite;
+  }
+  .animate-float-soft {
+    animation: float-soft 6s ease-in-out infinite;
+  }
+  .shimmer-text {
+    background: linear-gradient(
+      100deg,
+      hsl(var(--accent)) 20%,
+      hsl(40 85% 68%) 40%,
+      hsl(var(--accent)) 60%
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 5s linear infinite;
+  }
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-float-soft,
+  .shimmer-text {
+    animation: none;
+  }
+}
