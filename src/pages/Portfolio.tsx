@@ -1,7 +1,13 @@
+import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Link } from "react-router-dom";
-import { ArrowRight, Clock, Shield, Store, Target, TrendingUp, Mail } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { ArrowRight, ArrowUpRight, Clock, Shield, Store, Target, TrendingUp, Mail, X } from "lucide-react";
+import Reveal from "@/components/Reveal";
+import CountUp from "@/components/CountUp";
+
 import sslRedirectFix from "@/assets/portfolio/ssl-redirect-fix.png";
 import sslCertificateSetup from "@/assets/portfolio/ssl-certificate-setup.png";
 import autumnBlissSales from "@/assets/portfolio/autumn-bliss-sales.png";
@@ -19,7 +25,26 @@ import somaGoogleAds from "@/assets/portfolio/soma-google-ads.png";
 import tropixMarketingDashboard from "@/assets/portfolio/tropix-marketing-dashboard.png";
 import seoOptimizationDashboard from "@/assets/portfolio/seo-optimization-dashboard.png";
 
-const caseStudies = [
+type CaseStudy = {
+  id: number;
+  title: string;
+  category: string;
+  platform: string;
+  client: string;
+  duration: string;
+  highlight: string;
+  tags: string[];
+  icon: typeof Store;
+  images: { src: string; alt: string }[];
+  challenge: string;
+  solution: string;
+  results: { metric: string; value: string; description: string }[];
+  services: string[];
+  testimonial: string;
+  testimonialAuthor: string;
+};
+
+const caseStudies: CaseStudy[] = [
   {
     id: 1,
     title: "Cross Toss Trading — Complete Store Management",
@@ -27,6 +52,8 @@ const caseStudies = [
     platform: "Shopify",
     client: "Cross Toss Trading",
     duration: "Ongoing",
+    highlight: "$9,860 in sales",
+    tags: ["stores", "growth"],
     icon: Store,
     images: [{ src: crossTossDashboard, alt: "Cross Toss Trading Shopify analytics dashboard" }, { src: crossTossTraffic, alt: "Cross Toss Trading traffic performance report" }],
     challenge: "The client needed comprehensive store management to scale e-commerce operations, increase traffic, and boost overall sales performance.",
@@ -43,6 +70,8 @@ const caseStudies = [
     platform: "Shopify + Klaviyo",
     client: "Autumn Bliss Market",
     duration: "Ongoing",
+    highlight: "+129% sales growth",
+    tags: ["email", "growth"],
     icon: Mail,
     images: [
       { src: autumnBliss3MonthDashboard, alt: "Autumn Bliss Market three-month store analytics" }, { src: klaviyoRevenue, alt: "Autumn Bliss Market email revenue report" },
@@ -64,6 +93,8 @@ const caseStudies = [
     platform: "Shopify",
     client: "Haustierbedarf4You (Oliver Ormans)",
     duration: "4 weeks",
+    highlight: "Complete rebrand",
+    tags: ["stores"],
     icon: Store,
     images: [{ src: haustierbedarfRebrand, alt: "Haustierbedarf4You German-language pet store rebrand" }],
     challenge: "The German pet supply store needed a visual rebrand to connect with pet owners and create a premium, trustworthy shopping experience.",
@@ -80,6 +111,8 @@ const caseStudies = [
     platform: "E-commerce",
     client: "XIT Offroad",
     duration: "1 week",
+    highlight: "100% browser trust",
+    tags: ["technical"],
     icon: Shield,
     images: [{ src: sslCertificateSetup, alt: "XIT Offroad SSL certificate configuration" }, { src: sslRedirectFix, alt: "XIT Offroad HTTPS redirect configuration" }],
     challenge: "The store was showing SSL certificate errors, causing browser warnings that could discourage customers and affect search visibility.",
@@ -96,6 +129,8 @@ const caseStudies = [
     platform: "Google Ads",
     client: "Soma Dental",
     duration: "Ongoing",
+    highlight: "1,598 conversions",
+    tags: ["ads", "social"],
     icon: TrendingUp,
     images: [{ src: somaGoogleAds, alt: "Soma Dental Google Ads campaign performance" }],
     challenge: "The dental practice wanted to increase patient bookings through targeted paid advertising while maintaining efficient acquisition costs.",
@@ -112,6 +147,8 @@ const caseStudies = [
     platform: "Facebook & Instagram Ads",
     client: "Tropix Beverages",
     duration: "3 months",
+    highlight: "175K people reached",
+    tags: ["ads", "social"],
     icon: TrendingUp,
     images: [{ src: tropixMarketingDashboard, alt: "Tropix Beverages social media advertising dashboard" }],
     challenge: "The beverage brand wanted to expand social reach and drive awareness while maintaining cost efficiency.",
@@ -128,6 +165,8 @@ const caseStudies = [
     platform: "E-commerce",
     client: "Urban Pet Club",
     duration: "Ongoing",
+    highlight: "92% page structure",
+    tags: ["seo"],
     icon: Target,
     images: [{ src: seoOptimizationDashboard, alt: "Urban Pet Club SEO optimization dashboard" }],
     challenge: "The pet supply store wanted to improve its organic search visibility and on-page SEO to bring in more qualified traffic.",
@@ -139,21 +178,164 @@ const caseStudies = [
   },
 ];
 
-const Portfolio = () => (
-  <div>
-    <section className="bg-primary py-16 text-primary-foreground md:py-20"><div className="container mx-auto px-4"><p className="mb-4 text-xs font-semibold uppercase tracking-[0.12em] text-accent">Portfolio & case studies</p><h1 className="mb-5 max-w-3xl text-4xl font-bold md:text-5xl">Real work, with the details behind it.</h1><p className="max-w-2xl text-lg leading-relaxed text-primary-foreground/80">Explore e-commerce projects across store development, marketing, visibility, and technical support.</p></div></section>
-    <section className="border-b border-border bg-secondary py-8"><div className="container mx-auto grid grid-cols-2 gap-5 px-4 text-center sm:grid-cols-4">{[{ value: "7", label: "Featured case studies" }, { value: "4", label: "Growth areas" }, { value: "50+", label: "Projects completed" }, { value: "3+", label: "Years of experience" }].map((stat) => <div key={stat.label}><span className="block text-2xl font-bold text-accent">{stat.value}</span><span className="mt-1 block text-xs text-muted-foreground sm:text-sm">{stat.label}</span></div>)}</div></section>
-    <section className="py-14 md:py-20"><div className="container mx-auto space-y-20 px-4 md:space-y-24">
-      {caseStudies.map((study) => <article key={study.id} className="border-t border-border pt-7">
-        <div className="mb-7 grid gap-5 md:grid-cols-[1fr_auto] md:items-end"><div><Badge variant="secondary" className="mb-3">{study.category}</Badge><h2 className="max-w-3xl text-2xl font-bold leading-tight md:text-3xl">{study.title}</h2><p className="mt-2 text-sm text-muted-foreground">{study.client} <span aria-hidden="true">·</span> {study.platform}</p></div><div className="flex items-center gap-2 text-sm text-muted-foreground"><Clock className="h-4 w-4 text-accent" />{study.duration}</div></div>
-        <div className="mb-8 grid gap-3 md:grid-cols-2">{study.images.map((image) => <img key={image.src} src={image.src} alt={image.alt} loading="lazy" className={`w-full border border-border object-contain ${study.images.length > 2 ? "aspect-[16/9] bg-muted" : "aspect-[16/8] bg-muted"} ${study.images.length === 1 ? "md:col-span-2" : ""}`} />)}</div>
-        <div className="grid gap-8 lg:grid-cols-[1fr_1fr_1.2fr]"><div><h3 className="mb-2 text-xs font-semibold uppercase tracking-[0.1em] text-muted-foreground">The challenge</h3><p className="leading-relaxed">{study.challenge}</p></div><div><h3 className="mb-2 text-xs font-semibold uppercase tracking-[0.1em] text-muted-foreground">Our solution</h3><p className="leading-relaxed">{study.solution}</p></div><div><h3 className="mb-3 text-xs font-semibold uppercase tracking-[0.1em] text-muted-foreground">Measurable results</h3><div className="grid grid-cols-2 gap-x-4">{study.results.map((result) => <div key={result.metric} className="border-t border-border py-3"><span className="block text-2xl font-bold text-accent">{result.value}</span><span className="mt-1 block text-sm font-semibold">{result.metric}</span><span className="block text-xs text-muted-foreground">{result.description}</span></div>)}</div></div></div>
-        <div className="mt-6 flex flex-wrap gap-2">{study.services.map((service) => <Badge key={service} variant="outline" className="font-normal">{service}</Badge>)}</div>
-        <blockquote className="mt-7 border-l-2 border-accent pl-5"><p className="text-base italic leading-relaxed">“{study.testimonial}”</p><footer className="mt-2 text-sm font-semibold text-muted-foreground">— {study.testimonialAuthor}</footer></blockquote>
-      </article>)}
-    </div></section>
-    <section className="bg-secondary py-16 md:py-20"><div className="container mx-auto flex flex-col gap-5 px-4 sm:flex-row sm:items-center sm:justify-between"><div><p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-accent">Your next project</p><h2 className="text-3xl font-bold">Ready to build what’s next?</h2><p className="mt-2 text-muted-foreground">Tell us what you’re working toward.</p></div><Button asChild size="lg" variant="hero"><Link to="/contact">Start a Conversation <ArrowRight /></Link></Button></div></section>
-  </div>
-);
+const filters = [
+  { id: "all", label: "All work" },
+  { id: "stores", label: "Stores & Design" },
+  { id: "growth", label: "Growth & Email" },
+  { id: "ads", label: "Paid Ads & Social" },
+  { id: "seo", label: "SEO" },
+  { id: "technical", label: "Technical" },
+];
+
+const Portfolio = () => {
+  const [activeFilter, setActiveFilter] = useState("all");
+  const [activeStudy, setActiveStudy] = useState<CaseStudy | null>(null);
+
+  const visibleStudies = caseStudies.filter(
+    (study) => activeFilter === "all" || study.tags.includes(activeFilter)
+  );
+
+  return (
+    <div>
+      <section className="relative overflow-hidden bg-primary py-16 text-primary-foreground md:py-24">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,hsl(36_72%_48%/0.2),transparent_55%)]" />
+        <div className="container mx-auto px-4">
+          <Reveal><p className="mb-4 text-xs font-semibold uppercase tracking-[0.12em] text-accent">Portfolio & case studies</p>
+          <h1 className="mb-5 max-w-3xl text-4xl font-bold leading-tight md:text-5xl">Real work, with the details behind it.</h1>
+          <p className="max-w-2xl text-lg leading-relaxed text-primary-foreground/80">Explore e-commerce projects across store development, marketing, visibility, and technical support. Open any case study to see the full story.</p></Reveal>
+        </div>
+      </section>
+
+      <section className="border-b border-border bg-secondary py-8">
+        <div className="container mx-auto grid grid-cols-2 gap-5 px-4 text-center sm:grid-cols-4">
+          {[{ value: "7", label: "Featured case studies" }, { value: "4", label: "Growth areas" }, { value: "50+", label: "Projects completed" }, { value: "3+", label: "Years of experience" }].map((stat, index) => (
+            <Reveal key={stat.label} delay={index * 0.07}>
+              <div><CountUp value={stat.value} className="block text-2xl font-bold text-accent" /><span className="mt-1 block text-xs text-muted-foreground sm:text-sm">{stat.label}</span></div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      <section className="py-14 md:py-20">
+        <div className="container mx-auto px-4">
+          {/* Filters */}
+          <div className="mb-9 flex flex-wrap gap-2" role="tablist" aria-label="Filter case studies">
+            {filters.map((filter) => (
+              <button
+                key={filter.id}
+                role="tab"
+                aria-selected={activeFilter === filter.id}
+                onClick={() => setActiveFilter(filter.id)}
+                className={`rounded-full border px-4 py-2 text-sm font-medium transition-all duration-300 ${
+                  activeFilter === filter.id
+                    ? "border-accent bg-accent text-accent-foreground shadow-md"
+                    : "border-border bg-background text-muted-foreground hover:border-accent hover:text-foreground"
+                }`}
+              >
+                {filter.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Case study cards */}
+          <motion.div layout className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
+            <AnimatePresence mode="popLayout">
+              {visibleStudies.map((study) => (
+                <motion.article
+                  layout
+                  key={study.id}
+                  initial={{ opacity: 0, scale: 0.94, y: 24 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.94, y: 24 }}
+                  transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <button
+                    onClick={() => setActiveStudy(study)}
+                    className="group block w-full overflow-hidden rounded-lg border border-border bg-card text-left shadow-[var(--shadow-soft)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[var(--shadow-large)]"
+                  >
+                    <div className="relative overflow-hidden bg-muted">
+                      <img src={study.images[0].src} alt={study.images[0].alt} loading="lazy" className="aspect-[4/3] w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.06]" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/25 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-95" />
+                      <span className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-background/90 px-3 py-1.5 text-xs font-semibold text-foreground backdrop-blur-sm"><study.icon className="h-3.5 w-3.5 text-accent" />{study.category}</span>
+                      <div className="absolute inset-x-0 bottom-0 p-5 text-primary-foreground">
+                        <p className="mb-1 text-xs font-semibold uppercase tracking-[0.1em] text-accent">{study.highlight}</p>
+                        <h2 className="text-lg font-bold leading-snug">{study.client}</h2>
+                      </div>
+                      <span className="absolute right-4 top-4 flex h-9 w-9 translate-y-2 items-center justify-center rounded-full bg-accent text-accent-foreground opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                        <ArrowUpRight className="h-4 w-4" />
+                      </span>
+                    </div>
+                    <div className="flex items-center justify-between gap-3 p-5">
+                      <div>
+                        <h3 className="text-sm font-semibold leading-snug">{study.title.split("—")[0].trim()}</h3>
+                        <p className="mt-1 text-xs text-muted-foreground">{study.platform}</p>
+                      </div>
+                      <span className="flex shrink-0 items-center gap-1 text-xs font-medium text-accent"><Clock className="h-3.5 w-3.5" />{study.duration}</span>
+                    </div>
+                  </button>
+                </motion.article>
+              ))}
+            </AnimatePresence>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="bg-secondary py-16 md:py-20">
+        <div className="container mx-auto flex flex-col gap-5 px-4 sm:flex-row sm:items-center sm:justify-between">
+          <Reveal from="left"><p className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-accent">Your next project</p><h2 className="text-3xl font-bold">Ready to build what’s next?</h2><p className="mt-2 text-muted-foreground">Tell us what you’re working toward.</p></Reveal>
+          <Reveal from="right"><Button asChild size="lg" variant="hero"><Link to="/contact">Start a Conversation <ArrowRight /></Link></Button></Reveal>
+        </div>
+      </section>
+
+      {/* Case study detail dialog */}
+      <Dialog open={activeStudy !== null} onOpenChange={(open) => !open && setActiveStudy(null)}>
+        <DialogContent className="max-h-[85vh] max-w-3xl overflow-y-auto rounded-lg">
+          <DialogHeader className="text-left">
+            <Badge variant="secondary" className="mb-1 w-fit">{activeStudy?.category}</Badge>
+            <DialogTitle className="text-2xl leading-snug">{activeStudy?.title}</DialogTitle>
+            <DialogDescription>{activeStudy?.client} · {activeStudy?.platform} · {activeStudy?.duration}</DialogDescription>
+          </DialogHeader>
+
+          {activeStudy && (
+            <div className="space-y-7">
+              <div className={`grid gap-3 ${activeStudy.images.length > 1 ? "sm:grid-cols-2" : ""}`}>
+                {activeStudy.images.map((image) => (
+                  <img key={image.src} src={image.src} alt={image.alt} loading="lazy" className="w-full rounded-md border border-border bg-muted object-contain" />
+                ))}
+              </div>
+
+              <div className="grid gap-6 md:grid-cols-2">
+                <div><h3 className="mb-2 text-xs font-semibold uppercase tracking-[0.1em] text-muted-foreground">The challenge</h3><p className="leading-relaxed">{activeStudy.challenge}</p></div>
+                <div><h3 className="mb-2 text-xs font-semibold uppercase tracking-[0.1em] text-muted-foreground">Our solution</h3><p className="leading-relaxed">{activeStudy.solution}</p></div>
+              </div>
+
+              <div>
+                <h3 className="mb-3 text-xs font-semibold uppercase tracking-[0.1em] text-muted-foreground">Measurable results</h3>
+                <div className="grid grid-cols-2 gap-x-5 sm:grid-cols-4">
+                  {activeStudy.results.map((result) => (
+                    <div key={result.metric} className="border-t border-border py-3">
+                      <span className="block text-xl font-bold text-accent">{result.value}</span>
+                      <span className="mt-1 block text-sm font-semibold">{result.metric}</span>
+                      <span className="block text-xs text-muted-foreground">{result.description}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-2">{activeStudy.services.map((service) => <Badge key={service} variant="outline" className="font-normal">{service}</Badge>)}</div>
+
+              <blockquote className="border-l-2 border-accent pl-5">
+                <p className="italic leading-relaxed">“{activeStudy.testimonial}”</p>
+                <footer className="mt-2 text-sm font-semibold text-muted-foreground">— {activeStudy.testimonialAuthor}</footer>
+              </blockquote>
+
+              <Button asChild variant="hero" className="w-full sm:w-auto"><Link to="/contact">Start a similar project <ArrowRight /></Link></Button>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
+    </div>
+  );
+};
 
 export default Portfolio;
