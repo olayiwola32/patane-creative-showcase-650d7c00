@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Clock, Send } from "lucide-react";
+import Reveal from "@/components/Reveal";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -66,9 +67,11 @@ const Contact = () => {
     <div>
       <section className="bg-primary py-16 text-primary-foreground md:py-20">
         <div className="container mx-auto px-4">
+          <Reveal>
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.12em] text-accent">Contact QOA Creative Tech</p>
           <h1 className="mb-5 max-w-3xl text-4xl font-bold md:text-5xl">Tell us what you’re working toward.</h1>
           <p className="max-w-2xl text-lg leading-relaxed text-primary-foreground/80">Ready to improve your e-commerce business? Share a little about your project and we’ll be in touch within 24 hours.</p>
+          </Reveal>
         </div>
       </section>
 
@@ -76,7 +79,7 @@ const Contact = () => {
         <div className="container mx-auto px-4">
           <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
             {/* Contact Form */}
-            <div>
+            <Reveal>
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-accent">Project inquiry</p>
               <h2 className="mb-7 text-3xl font-bold text-foreground">Start a conversation.</h2>
               <form onSubmit={handleSubmit} className="space-y-5">
@@ -185,10 +188,10 @@ const Contact = () => {
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
               </form>
-            </div>
+            </Reveal>
 
             {/* Contact Info */}
-            <div className="space-y-7">
+            <Reveal className="space-y-7">
               <div>
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-accent">Contact information</p>
                 <h2 className="mb-3 text-3xl font-bold text-foreground">Here to help you move forward.</h2>
@@ -201,7 +204,7 @@ const Contact = () => {
                 <div className="py-5"><h3 className="mb-2 flex items-center gap-3 font-semibold text-foreground"><Clock className="h-5 w-5 text-accent" />Response Time</h3><div className="pl-8"><p className="text-sm text-muted-foreground">Within 24 hours</p><p className="mt-2 text-sm text-muted-foreground">We typically respond to all inquiries within one business day</p></div></div>
               </div>
 
-              <div className="border-l-2 border-accent pl-5"><h3 className="mb-2 font-semibold text-foreground">Ready to get started?</h3><p className="text-sm leading-relaxed text-muted-foreground">Book a free 30-minute consultation to discuss your e-commerce goals and how we can help you achieve them.</p></div>
+              <div className="border-l-2 border-accent pl-5"><h3 className="mb-2 font-semibold text-foreground">Ready to get started?</h3><p className="text-sm leading-relaxed text-muted-foreground">Book a free 30-minute consultation to discuss your e-commerce goals and how we can help you achieve them.</p></Reveal>
             </div>
           </div>
         </div>

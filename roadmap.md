@@ -1,6 +1,9 @@
 - [x] Refresh the shared visual foundation while preserving the current logo, colors, navigation, and contact details.
-- [x] Rebuild the homepage with platform expertise, services, authentic portfolio highlights, process, verified team preview, and clear contact actions.
+- [x] Rebuild the homepage with platform expertise, services, authentic portfolio highlights, process, and clear contact actions.
 - [x] Redesign Services, About, Portfolio, Testimonials, Pricing, and Contact without removing content or changing contact/payment behavior.
 - [x] Update app-specific title, description, and social metadata.
-- [x] Verify responsive page rendering, all 18 portfolio images, important links/forms, preserved fixed prices and checkout routes, and the latest build logs.
-- [ ] Pending user input: names, roles, optional bios, and photos for the three additional team members needed for the requested five-person team.
+- [x] Add Book Marketing and AI Product/Promotional Video services to the Services page.
+- [x] Remove the team/"meet the specialists" sections from the homepage and About page.
+- [x] Add site-wide scroll animations, animated homepage hero with parallax and count-up stats, and a filterable case-study showcase with detail dialogs.
+- [x] Verify responsive page rendering, all portfolio images, important links/forms, preserved fixed prices and checkout routes, and the latest build logs.
+- [x] Resolved: team member profiles are no longer needed (team sections removed at user request).
