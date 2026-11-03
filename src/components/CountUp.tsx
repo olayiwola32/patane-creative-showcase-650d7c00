@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { animate, useInView, useReducedMotion } from "framer-motion";
 
 interface CountUpProps {
