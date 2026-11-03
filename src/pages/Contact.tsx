@@ -204,8 +204,8 @@ const Contact = () => {
                 <div className="py-5"><h3 className="mb-2 flex items-center gap-3 font-semibold text-foreground"><Clock className="h-5 w-5 text-accent" />Response Time</h3><div className="pl-8"><p className="text-sm text-muted-foreground">Within 24 hours</p><p className="mt-2 text-sm text-muted-foreground">We typically respond to all inquiries within one business day</p></div></div>
               </div>
 
-              <div className="border-l-2 border-accent pl-5"><h3 className="mb-2 font-semibold text-foreground">Ready to get started?</h3><p className="text-sm leading-relaxed text-muted-foreground">Book a free 30-minute consultation to discuss your e-commerce goals and how we can help you achieve them.</p></Reveal>
-            </div>
+              <div className="border-l-2 border-accent pl-5"><h3 className="mb-2 font-semibold text-foreground">Ready to get started?</h3><p className="text-sm leading-relaxed text-muted-foreground">Book a free 30-minute consultation to discuss your e-commerce goals and how we can help you achieve them.</p></div>
+            </Reveal>
           </div>
         </div>
       </section>

@@ -78,7 +78,7 @@ const Home = () => {
             </motion.div>
 
             <h1 className="mb-7 text-4xl font-bold leading-[1.06] md:text-6xl lg:text-[4.25rem]">
-              {["Your Growth.", "Our Expertise.", "One Powerful", "Digital Partnership."].map((line, index) => (
+              {["Your Growth.", "Our Expertise.", "One Powerful", "Partnership."].map((line, index) => (
                 <motion.span
                   key={line}
                   className="block"

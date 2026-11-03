@@ -45,7 +45,7 @@ const Services = () => (
       {services.map((service, index) => (
         <Reveal key={service.title} delay={(index % 2) * 0.08}>
           <article className="group grid grid-cols-[42px_1fr] gap-4 border-t border-border py-7 transition-colors hover:border-accent">
-            <span className="pt-1 text-sm font-semibold text-accent">0{index + 1}</span>
+            <span className="pt-1 text-sm font-semibold text-accent">{String(index + 1).padStart(2, "0")}</span>
             <div>
               {service.image && (
                 <div className="mb-5 overflow-hidden rounded-md">

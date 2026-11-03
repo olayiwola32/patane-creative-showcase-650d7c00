@@ -255,7 +255,7 @@ const Portfolio = () => {
                   >
                     <div className="relative overflow-hidden bg-muted">
                       <img src={study.images[0].src} alt={study.images[0].alt} loading="lazy" className="aspect-[4/3] w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.06]" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/25 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-95" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-100" />
                       <span className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-background/90 px-3 py-1.5 text-xs font-semibold text-foreground backdrop-blur-sm"><study.icon className="h-3.5 w-3.5 text-accent" />{study.category}</span>
                       <div className="absolute inset-x-0 bottom-0 p-5 text-primary-foreground">
                         <p className="mb-1 text-xs font-semibold uppercase tracking-[0.1em] text-accent">{study.highlight}</p>
