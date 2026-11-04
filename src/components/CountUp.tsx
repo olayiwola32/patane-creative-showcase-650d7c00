@@ -25,7 +25,8 @@ const CountUp = ({ value, className, duration = 1.6 }: CountUpProps) => {
   const inView = useInView(ref, { once: true, margin: "-40px" });
   const shouldReduceMotion = useReducedMotion();
   const [display, setDisplay] = useState("0");
-  const parts = parseValue(value);
+  // Memoized so a parent re-render doesn't restart the count from zero.
+  const parts = useMemo(() => parseValue(value), [value]);
 
   useEffect(() => {
     if (!parts || !inView) {

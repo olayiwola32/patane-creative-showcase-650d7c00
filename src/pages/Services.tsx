@@ -4,18 +4,26 @@ import { ArrowRight, BarChart3, BookOpen, Clapperboard, Globe, Mail, Palette, Se
 import Reveal from "@/components/Reveal";
 import bookMarketingImage from "@/assets/book-marketing.jpg";
 import aiProductVideoImage from "@/assets/ai-product-video.jpg";
+import serviceShopifyImage from "@/assets/service-shopify.jpg";
+import serviceWixImage from "@/assets/service-wix.jpg";
+import serviceRebrandImage from "@/assets/service-rebrand.jpg";
+import serviceSeoImage from "@/assets/service-seo.jpg";
+import serviceEmailImage from "@/assets/service-email.jpg";
+import serviceSocialImage from "@/assets/service-social.jpg";
+import serviceGoogleAdsImage from "@/assets/service-google-ads.jpg";
+import serviceTechnicalImage from "@/assets/service-technical.jpg";
 
 const services = [
-  { icon: ShoppingCart, title: "Shopify Store Development", description: "Complete Shopify store setup, customization, and optimization. We create conversion-focused stores that represent your brand.", features: ["Custom theme development", "Store migration & setup", "App integration & optimization", "Mobile-responsive design"] },
-  { icon: Globe, title: "Wix Solutions", description: "Professional Wix website development tailored to your e-commerce needs—beautiful, functional, and easy to manage.", features: ["Custom Wix design", "E-commerce functionality", "SEO optimization", "Content management training"] },
-  { icon: Palette, title: "Store Rebrand & Revamp", description: "Transform your existing store with a fresh, modern look while improving the customer experience.", features: ["Brand strategy & identity", "UI/UX redesign", "Performance optimization", "A/B testing implementation"] },
-  { icon: Search, title: "Advanced SEO", description: "Practical SEO strategies to improve organic visibility and bring qualified visitors to your store.", features: ["Technical SEO audit", "Keyword research & strategy", "On-page optimization", "Link building campaigns"] },
-  { icon: Mail, title: "Email Marketing & Klaviyo", description: "Campaigns and automated flows that nurture customers and support repeat purchases.", features: ["Klaviyo setup & integration", "Automated email flows", "Segmentation strategies", "Campaign design & copywriting"] },
-  { icon: TrendingUp, title: "Social Media Marketing", description: "Engaging social campaigns that build brand awareness and support conversions across major platforms.", features: ["Content strategy & creation", "Paid social advertising", "Community management", "Influencer partnerships"] },
-  { icon: BarChart3, title: "Google Ads Management", description: "Data-informed Google Ads campaigns with strategy, execution, and performance tracking.", features: ["Campaign strategy & setup", "Keyword research & bidding", "Ad copy optimization", "Performance tracking & reporting"] },
+  { icon: ShoppingCart, title: "Shopify Store Development", description: "Complete Shopify store setup, customization, and optimization. We create conversion-focused stores that represent your brand.", image: serviceShopifyImage, imageAlt: "A designer building a polished clothing storefront on a laptop", features: ["Custom theme development", "Store migration & setup", "App integration & optimization", "Mobile-responsive design"] },
+  { icon: Globe, title: "Wix Solutions", description: "Professional Wix website development tailored to your e-commerce needs—beautiful, functional, and easy to manage.", image: serviceWixImage, imageAlt: "A desktop monitor showing an elegant website homepage being designed", features: ["Custom Wix design", "E-commerce functionality", "SEO optimization", "Content management training"] },
+  { icon: Palette, title: "Store Rebrand & Revamp", description: "Transform your existing store with a fresh, modern look while improving the customer experience.", image: serviceRebrandImage, imageAlt: "A brand designer comparing an outdated layout with a fresh modern redesign", features: ["Brand strategy & identity", "UI/UX redesign", "Performance optimization", "A/B testing implementation"] },
+  { icon: Search, title: "Advanced SEO", description: "Practical SEO strategies to improve organic visibility and bring qualified visitors to your store.", image: serviceSeoImage, imageAlt: "An SEO analytics dashboard with rising search ranking graphs", features: ["Technical SEO audit", "Keyword research & strategy", "On-page optimization", "Link building campaigns"] },
+  { icon: Mail, title: "Email Marketing & Klaviyo", description: "Campaigns and automated flows that nurture customers and support repeat purchases.", image: serviceEmailImage, imageAlt: "A designed promotional email shown on a phone beside campaign performance charts", features: ["Klaviyo setup & integration", "Automated email flows", "Segmentation strategies", "Campaign design & copywriting"] },
+  { icon: TrendingUp, title: "Social Media Marketing", description: "Engaging social campaigns that build brand awareness and support conversions across major platforms.", image: serviceSocialImage, imageAlt: "A smartphone scrolling a styled social media feed beside a content plan", features: ["Content strategy & creation", "Paid social advertising", "Community management", "Influencer partnerships"] },
+  { icon: BarChart3, title: "Google Ads Management", description: "Data-informed Google Ads campaigns with strategy, execution, and performance tracking.", image: serviceGoogleAdsImage, imageAlt: "A specialist reviewing a Google Ads campaign performance dashboard", features: ["Campaign strategy & setup", "Keyword research & bidding", "Ad copy optimization", "Performance tracking & reporting"] },
   { icon: Clapperboard, title: "Product & Promotional AI Videos", description: "Scroll-stopping product and promotional videos created with AI—perfect for ads, social media, and product pages.", image: aiProductVideoImage, imageAlt: "A studio camera filming a product on a golden podium for a promotional video", features: ["AI-generated product videos", "Promotional & ad creatives", "Social-ready video formats", "Product showcases & demos"] },
   { icon: BookOpen, title: "Book Marketing", description: "Marketing that puts your book in front of real readers—launch campaigns, audience building, and author promotion.", image: bookMarketingImage, imageAlt: "An open book beside a phone and laptop showing marketing campaign results", features: ["Book launch campaigns", "Reader audience building", "Social & email promotion", "Author brand support"] },
-  { icon: Wrench, title: "Backend & Technical Fixes", description: "Hands-on support to resolve issues, improve performance, and help your store run smoothly.", features: ["Bug fixes & troubleshooting", "Speed optimization", "Security enhancements", "Third-party integrations"] },
+  { icon: Wrench, title: "Backend & Technical Fixes", description: "Hands-on support to resolve issues, improve performance, and help your store run smoothly.", image: serviceTechnicalImage, imageAlt: "A developer's screen showing website code and a security fix in a terminal", features: ["Bug fixes & troubleshooting", "Speed optimization", "Security enhancements", "Third-party integrations"] },
 ];
 
 const platforms = ["Shopify", "WooCommerce", "Wix", "BigCommerce", "Squarespace Commerce", "Adobe Commerce"];
@@ -47,11 +55,9 @@ const Services = () => (
           <article className="group grid grid-cols-[42px_1fr] gap-4 border-t border-border py-7 transition-colors hover:border-accent">
             <span className="pt-1 text-sm font-semibold text-accent">{String(index + 1).padStart(2, "0")}</span>
             <div>
-              {service.image && (
-                <div className="mb-5 overflow-hidden rounded-md">
-                  <img src={service.image} alt={service.imageAlt} loading="lazy" className="aspect-[16/7] w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
-                </div>
-              )}
+              <div className="mb-5 overflow-hidden rounded-md">
+                <img src={service.image} alt={service.imageAlt} loading="lazy" width={1536} height={672} className="aspect-[16/7] w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+              </div>
               <div className="mb-3 flex items-center gap-3"><service.icon className="h-5 w-5 text-accent" /><h3 className="text-xl font-semibold">{service.title}</h3></div>
               <p className="mb-4 leading-relaxed text-muted-foreground">{service.description}</p>
               <ul className="grid gap-2 sm:grid-cols-2">{service.features.map((feature) => <li key={feature} className="flex gap-2 text-sm text-muted-foreground"><span className="text-accent">—</span>{feature}</li>)}</ul>
