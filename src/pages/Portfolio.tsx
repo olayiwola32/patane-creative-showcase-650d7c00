@@ -252,7 +252,7 @@ const Portfolio = () => {
         <div className="container mx-auto grid grid-cols-2 gap-5 px-4 text-center sm:grid-cols-4">
           {stats.map((stat, index) => (
             <Reveal key={stat.label} delay={index * 0.07}>
-              <div><CountUp value={stat.value} className="block text-2xl font-bold text-accent" /><span className="mt-1 block text-xs text-muted-foreground sm:text-sm">{stat.label}</span></div>
+              <div><span className="block text-2xl font-bold text-accent">{stat.value}</span><span className="mt-1 block text-xs text-muted-foreground sm:text-sm">{stat.label}</span></div>
             </Reveal>
           ))}
         </div>
