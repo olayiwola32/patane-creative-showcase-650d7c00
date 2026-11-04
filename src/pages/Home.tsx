@@ -48,7 +48,7 @@ const Home = () => {
 
   const stats = [
     { value: "3+", label: "Years of experience" },
-    { value: "50+", label: "Projects completed" },
+    { value: "30+", label: "Projects completed" },
     { value: "100%", label: "Client satisfaction" },
   ];
 
@@ -126,7 +126,7 @@ const Home = () => {
                 transition={{ duration: 0.7, delay: 1 + index * 0.15, ease: easeOut }}
                 className="rounded-lg border border-primary-foreground/15 bg-primary-foreground/5 p-5 backdrop-blur-sm"
               >
-                <CountUp value={stat.value} className="mb-1 block text-3xl font-bold text-accent" />
+                <span className="mb-1 block text-3xl font-bold text-accent">{stat.value}</span>
                 <span className="text-sm text-primary-foreground/75">{stat.label}</span>
               </motion.div>
             ))}

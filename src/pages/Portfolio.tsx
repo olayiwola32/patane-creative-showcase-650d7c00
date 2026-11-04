@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowRight, ArrowUpRight, Clock, Shield, Store, Target, TrendingUp, Mail, X } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Clapperboard, Clock, Shield, Store, Target, TrendingUp, Mail } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import CountUp from "@/components/CountUp";
 
@@ -25,6 +25,14 @@ import somaGoogleAds from "@/assets/portfolio/soma-google-ads.png";
 import tropixMarketingDashboard from "@/assets/portfolio/tropix-marketing-dashboard.png";
 import seoOptimizationDashboard from "@/assets/portfolio/seo-optimization-dashboard.png";
 
+import oliveBeforeHero from "@/assets/portfolio/olive-b4-1.png.asset.json";
+import oliveBeforeCollections from "@/assets/portfolio/olive-b4-2.png.asset.json";
+import oliveBeforeDesign from "@/assets/portfolio/olive-b4-3.png.asset.json";
+import oliveAfterHero from "@/assets/portfolio/olive-after-1.png.asset.json";
+import oliveAfterCollections from "@/assets/portfolio/olive-after-2.png.asset.json";
+import oliveAfterExperience from "@/assets/portfolio/olive-after-3.png.asset.json";
+import olivePromoVideo from "@/assets/videos/olive-promo-video.mp4.asset.json";
+
 type CaseStudy = {
   id: number;
   title: string;
@@ -35,7 +43,8 @@ type CaseStudy = {
   highlight: string;
   tags: string[];
   icon: typeof Store;
-  images: { src: string; alt: string }[];
+  images: { src: string; alt: string; label?: string }[];
+  video?: { src: string; poster?: string; alt: string };
   challenge: string;
   solution: string;
   results: { metric: string; value: string; description: string }[];
@@ -176,6 +185,32 @@ const caseStudies: CaseStudy[] = [
     testimonial: "Our organic traffic has steadily increased since implementing the SEO recommendations.",
     testimonialAuthor: "Urban Pet Club Owner",
   },
+  {
+    id: 8,
+    title: "Olive&Coop Boutique — Website Revamp & Promo Video",
+    category: "Website Revamp & Video",
+    platform: "Shopify",
+    client: "Olive&Coop Boutique",
+    duration: "3 weeks",
+    highlight: "Complete revamp + promo video",
+    tags: ["stores"],
+    icon: Store,
+    images: [
+      { src: oliveBeforeHero.url, alt: "Olive&Coop Boutique children's clothing storefront before the revamp", label: "Before" },
+      { src: oliveAfterHero.url, alt: "Olive&Coop Boutique refreshed branded hero section", label: "After" },
+      { src: oliveBeforeCollections.url, alt: "Olive&Coop Boutique collection grid before the revamp", label: "Before" },
+      { src: oliveAfterCollections.url, alt: "Olive&Coop Boutique reorganized shop-by-collection experience", label: "After" },
+      { src: oliveBeforeDesign.url, alt: "Olive&Coop Boutique earlier store sections before the revamp", label: "Before" },
+      { src: oliveAfterExperience.url, alt: "Olive&Coop Boutique testimonials, journal and refreshed footer", label: "After" },
+    ],
+    video: { src: olivePromoVideo.url, poster: oliveAfterHero.url, alt: "Product promotional video created for Olive&Coop Boutique" },
+    challenge: "The children's clothing boutique's storefront looked dated and generic, and it needed a refreshed shopping experience plus engaging promotional content to show off its warm brand.",
+    solution: "Revamped the storefront with a new branded hero, reorganized shop-by-collection navigation, and refreshed product, testimonial, journal, and footer sections — and created an AI-powered product promotional video to bring the brand to life for shoppers.",
+    results: [{ metric: "Store Revamp", value: "100%", description: "Full redesign" }, { metric: "Hero & Branding", value: "New", description: "Branded storefront" }, { metric: "Promo Video", value: "1", description: "Product video created" }, { metric: "Collections", value: "10+", description: "Reorganized" }],
+    services: ["Website Revamp", "UI/UX Redesign", "AI Promotional Video", "Merchandising"],
+    testimonial: "The new store feels like our brand finally came to life — and the promo video brings it to even more shoppers.",
+    testimonialAuthor: "Olive&Coop Boutique Team",
+  },
 ];
 
 const filters = [
@@ -195,6 +230,13 @@ const Portfolio = () => {
     (study) => activeFilter === "all" || study.tags.includes(activeFilter)
   );
 
+  const stats = [
+    { value: `${caseStudies.length}`, label: "Featured case studies" },
+    { value: "5", label: "Growth areas" },
+    { value: "30+", label: "Projects completed" },
+    { value: "3+", label: "Years of experience" },
+  ];
+
   return (
     <div>
       <section className="relative overflow-hidden bg-primary py-16 text-primary-foreground md:py-24">
@@ -208,9 +250,9 @@ const Portfolio = () => {
 
       <section className="border-b border-border bg-secondary py-8">
         <div className="container mx-auto grid grid-cols-2 gap-5 px-4 text-center sm:grid-cols-4">
-          {[{ value: "7", label: "Featured case studies" }, { value: "4", label: "Growth areas" }, { value: "50+", label: "Projects completed" }, { value: "3+", label: "Years of experience" }].map((stat, index) => (
+          {stats.map((stat, index) => (
             <Reveal key={stat.label} delay={index * 0.07}>
-              <div><CountUp value={stat.value} className="block text-2xl font-bold text-accent" /><span className="mt-1 block text-xs text-muted-foreground sm:text-sm">{stat.label}</span></div>
+              <div><span className="block text-2xl font-bold text-accent">{stat.value}</span><span className="mt-1 block text-xs text-muted-foreground sm:text-sm">{stat.label}</span></div>
             </Reveal>
           ))}
         </div>
@@ -257,6 +299,11 @@ const Portfolio = () => {
                       <img src={study.images[0].src} alt={study.images[0].alt} loading="lazy" className="aspect-[4/3] w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.06]" />
                       <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-100" />
                       <span className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-background/90 px-3 py-1.5 text-xs font-semibold text-foreground backdrop-blur-sm"><study.icon className="h-3.5 w-3.5 text-accent" />{study.category}</span>
+                      {study.video && (
+                        <span className="absolute right-4 top-16 inline-flex items-center gap-1.5 rounded-full bg-accent px-3 py-1.5 text-xs font-semibold text-accent-foreground shadow-md">
+                          <Clapperboard className="h-3.5 w-3.5" />Promo video
+                        </span>
+                      )}
                       <div className="absolute inset-x-0 bottom-0 p-5 text-primary-foreground">
                         <p className="mb-1 text-xs font-semibold uppercase tracking-[0.1em] text-accent">{study.highlight}</p>
                         <h2 className="text-lg font-bold leading-snug">{study.client}</h2>
@@ -300,9 +347,29 @@ const Portfolio = () => {
             <div className="space-y-7">
               <div className={`grid gap-3 ${activeStudy.images.length > 1 ? "sm:grid-cols-2" : ""}`}>
                 {activeStudy.images.map((image) => (
-                  <img key={image.src} src={image.src} alt={image.alt} loading="lazy" className="w-full rounded-md border border-border bg-muted object-contain" />
+                  <div key={image.src} className="relative overflow-hidden rounded-md border border-border bg-muted">
+                    <img src={image.src} alt={image.alt} loading="lazy" className="w-full object-contain" />
+                    {image.label && (
+                      <span className="absolute left-3 top-3 rounded-full bg-background/90 px-3 py-1 text-xs font-semibold text-foreground shadow-sm backdrop-blur-sm">{image.label}</span>
+                    )}
+                  </div>
                 ))}
               </div>
+
+              {activeStudy.video && (
+                <div>
+                  <h3 className="mb-3 text-xs font-semibold uppercase tracking-[0.1em] text-muted-foreground">Product promotional video</h3>
+                  <video
+                    controls
+                    preload="metadata"
+                    poster={activeStudy.video.poster}
+                    className="w-full rounded-md border border-border bg-muted shadow-[var(--shadow-soft)]"
+                  >
+                    <source src={activeStudy.video.src} type="video/mp4" />
+                    {activeStudy.video.alt}
+                  </video>
+                </div>
+              )}
 
               <div className="grid gap-6 md:grid-cols-2">
                 <div><h3 className="mb-2 text-xs font-semibold uppercase tracking-[0.1em] text-muted-foreground">The challenge</h3><p className="leading-relaxed">{activeStudy.challenge}</p></div>
