@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Reveal from "@/components/Reveal";
-import CountUp from "@/components/CountUp";
 import { ArrowRight, Check, Clapperboard, Code2, Mail, Search, ShoppingBag, Sparkles, TrendingUp } from "lucide-react";
 import heroImage from "@/assets/hero-background.jpg";
 import heroStudio from "@/assets/hero-studio.jpg";

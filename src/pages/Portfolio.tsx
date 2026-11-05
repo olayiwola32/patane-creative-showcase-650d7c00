@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight, Clapperboard, Clock, Shield, Store, Target, TrendingUp, Mail } from "lucide-react";
 import Reveal from "@/components/Reveal";
-import CountUp from "@/components/CountUp";
 
 import sslRedirectFix from "@/assets/portfolio/ssl-redirect-fix.png";
 import sslCertificateSetup from "@/assets/portfolio/ssl-certificate-setup.png";
