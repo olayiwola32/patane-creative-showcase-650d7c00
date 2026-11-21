@@ -10,3 +10,7 @@
 - [x] Fixed flickering count-up stats (restarted on every re-render) and set stable values: 5 growth areas, 30+ projects completed, 3+ years of experience.
 - [x] Added Olive&Coop Boutique website revamp case study with before/after screenshots and embedded product promotional video.
 - [x] Added showcase images for all services on the Services page (previously only Book Marketing and AI Videos had them).
+- [ ] Rework About around Qudus Olayiwola’s founder profile, supplied biography, real portrait, and LinkedIn link while preserving the existing brand and capabilities.
+- [ ] Add About-page SEO metadata, canonical URL, Person/Organization structured data, and natural internal links to Services, Portfolio, and Contact.
+- [ ] Publish an XML sitemap and connect it from robots.txt for the live qoacreative.sbs domain.
+- [ ] Verify portrait loading, desktop/mobile layout, SEO tags/schema, sitemap, links, and the latest build/runtime signals.
